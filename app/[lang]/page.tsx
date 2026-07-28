@@ -11,7 +11,7 @@ const T: any = {
     follow:'تابعنا', daily:'دليل العناية اليومي',
     art1:'روتين الصباحي', art2:'روتين المسائي', art3:'علاج حب الشباب', art4:'علاج الكلف', art5:'البشرة الحساسة', art6:'كيفية الاستخدام',
     cs1:'سيروم الكولاجين', cs2:'سيروم التفتيح', cs3:'مقشر طبي للوجه',
-    
+
   },
   tr: {
     home:'Ana Sayfa', products:'Ürünler', about:'Hakkımızda', catalog:'Katalog', private:'Private Label', stockists:'Satış Noktaları', contact:'İletişim', cert:'Sertifikalar',
@@ -78,13 +78,13 @@ function InstagramSection({ followText }: { followText: string }) {
   const [posts, setPosts] = useState<any[]>([])
   useEffect(() => {
     fetch('/api/instagram').then(r=>r.json()).then(d=>{
-      if(Array.isArray(d)) setPosts(d)
+      if(d.posts && Array.isArray(d.posts)) setPosts(d.posts)
+      else if(Array.isArray(d)) setPosts(d)
     }).catch(()=>{})
   }, [])
 
-  const fallbackImgs = ['https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&q=80','https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400&q=80','https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&q=80','https://images.unsplash.com/photo-1570554886111-e80fc1555b22?w=400&q=80','https://images.unsplash.com/photo-1617897903246-719242758050?w=400&q=80','https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&q=80']
-  const displayPosts = posts.length? posts : fallbackImgs.map((img,i)=>({ id: i, media_url: img, permalink: 'https://instagram.com/eclatdor.me', media_type: 'IMAGE' }))
-  const loopPosts = [...displayPosts,...displayPosts]
+  if(!posts.length) return null
+  const loopPosts = [...posts,...posts]
 
   return (
     <section style={{padding:'50px 0', background:'#FAF9F7', borderTop:'1px solid #eee', overflow:'hidden'}}>
@@ -235,7 +235,7 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
         <div style={{display:'flex', justifyContent:'space-between', paddingTop:'18px', fontSize:'11px', opacity:0.3}}><span>© 2026 Éclat Dor</span><span>{lang.toUpperCase()}</span></div>
       </footer>
       <a href="https://wa.me/905070000440" target="_blank" style={{position:'fixed', bottom:'24px', right:'24px', background:'#25D366', width:'60px', height:'60px', borderRadius:'50%', display:'flex', alignItems:'center', justifyContent:'center', boxShadow:'0 6px 24px rgba(37,211,102,0.4)', zIndex:99}}>
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M19.05 4.91A9.82 0 0 0 12.03 2C6.49 2 2 6.48 2 12.04a9.82 9.82 0 0 0 1.35 4.96L2 22l5.18-1.35A9.82 0 0 0 12.03 22c5.54 0 10.03-4.48 10.03-10.04 0-2.68-1.04-5.2-2.9-7.05Zm-7.02 13.7c-1.43 0-2.84-.38-4.08-1.1l-.29-.17-3.08.81.82-3L5.2 14.66a8.06 0 0 1-1.24-4.3c0-4.45 3.62-8.07 8.07-8.07 2.16 0 4.19.84 5.71 2.36a8.02 0 0 1 2.36 5.71c0 4.45-3.62 8.07-8.07 8.07Zm4.42-6.04c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.02-.37.1-.49.1-.1.24-.26.36-.39.12-.13.16-.22.24-.37.08-.15.04-.28-.02-.39-.06-.11-.54-1.3-.74-1.78-.2-.46-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.28-.22.22-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.57.18 1.09.16 1.5.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M19.05 4.91A9.82 0 0 0 12.03 2C6.49 2 2 6.48 2 12.04a9.82 0 0 0 1.35 4.96L2 22l5.18-1.35A9.82 0 0 0 12.03 22c5.54 0 10.03-4.48 10.03-10.04 0-2.68-1.04-5.2-2.9-7.05Zm-7.02 13.7c-1.43 0-2.84-.38-4.08-1.1l-.29-.17-3.08.81.82-3L5.2 14.66a8.06 0 0 1-1.24-4.3c0-4.45 3.62-8.07 8.07-8.07 2.16 0 4.19.84 5.71 2.36a8.02 0 0 1 2.36 5.71c0 4.45-3.62 8.07-8.07 8.07Zm4.42-6.04c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.02-.37.1-.49.1-.1.24-.26.36-.39.12-.13.16-.22.24-.37.08-.15.04-.28-.02-.39-.06-.11-.54-1.3-.74-1.78-.2-.46-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.28-.22.22-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.57.18 1.09.16 1.5.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
       </a>
       <style>{`@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-33.33%); } }`}</style>
     </main>
