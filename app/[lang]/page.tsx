@@ -148,14 +148,32 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
         <div style={{display:'flex', gap:'6px'}}>{langs.map(l=><Link key={l.code} href={`/${l.code}`} style={{padding:'5px 10px', borderRadius:'20px', border:'1px solid #000', fontSize:'11px', background: lang===l.code?'#000':'#fff', color: lang===l.code?'#fff':'#000', textDecoration:'none'}}>{l.label}</Link>)}</div>
       </header>
 
-      <section style={{display:'grid', gridTemplateColumns:'1.2fr 1fr', minHeight:'520px', background:'#FDFCF8'}}>
-        <div style={{padding:'70px 60px'}}>
-          <p style={{fontSize:'11px', letterSpacing:'4px', opacity:0.4}}>{t.heroSmall}</p>
-          <h1 style={{fontSize:'52px', lineHeight:1.1, fontWeight:400, marginTop:'16px'}}>{t.heroTitle}</h1>
-          <Link href={`/${lang}/products`} style={{background:'#111', color:'#fff', padding:'14px 28px', borderRadius:'30px', textDecoration:'none', display:'inline-block', marginTop:'24px', fontSize:'13px'}}>{t.shop}</Link>
-        </div>
-        <HeroImages />
-      </section>
+     <section style={{
+  position:'relative',
+  minHeight:'85vh',
+  display:'flex',
+  alignItems:'center',
+  justifyContent:'center',
+  backgroundImage:`url('/products/vitamin-c/2.png')`,
+  backgroundSize:'cover',
+  backgroundPosition:'center',
+  overflow:'hidden'
+}}>
+  {/* طبقة التعتيم */}
+  <div style={{
+    position:'absolute',
+    inset:0,
+    background:'linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45))',
+    backdropFilter:'blur(1px)'
+  }}></div>
+
+  {/* الكتابة فوق الصورة */}
+  <div style={{position:'relative', zIndex:2, textAlign:'center', padding:'40px', maxWidth:'800px'}}>
+    <p style={{fontSize:'12px', letterSpacing:'5px', color:'#fff', opacity:0.9, marginBottom:'16px'}}>{t.heroSmall}</p>
+    <h1 style={{fontSize:'56px', lineHeight:1.15, fontWeight:500, color:'#fff', textShadow:'0 4px 20px rgba(0,0,0,0.3)'}}>{t.heroTitle}</h1>
+    <Link href={`/${lang}/products`} style={{background:'#fff', color:'#000', padding:'16px 32px', borderRadius:'30px', textDecoration:'none', display:'inline-block', marginTop:'28px', fontSize:'14px', fontWeight:600}}>{t.shop}</Link>
+  </div>
+</section>
 
       <section style={{padding:'90px 20px', background:'#fff', textAlign:'center'}}>
         <div style={{display:'flex', alignItems:'center', justifyContent:'center', gap:'12px', marginBottom:'20px'}}>
