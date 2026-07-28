@@ -154,7 +154,7 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
   display:'flex',
   alignItems:'center',
   justifyContent:'center',
-  backgroundImage:`url('/products/vitamin-c/2.png')`,
+  backgroundImage:`url('/products/vitamin-c/3.png')`,
   backgroundSize:'cover',
   backgroundPosition:'center',
   overflow:'hidden'
