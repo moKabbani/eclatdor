@@ -2,27 +2,26 @@ import { NextResponse } from 'next/server'
 
 export async function GET() {
   const token = process.env.INSTAGRAM_ACCESS_TOKEN
-  console.log("TOKEN EXISTS:", !!token) // لنشوف بالترمنال اذا عم يقرا التوكن
   
   if (!token) {
-    return NextResponse.json({ error: 'No token in .env.local' }, { status: 500 })
+    return NextResponse.json({ error: 'No token' }, { status: 500 })
   }
 
-  const fields = 'id,caption,media_url,media_type,permalink,thumbnail_url,timestamp'
-  const url = `https://graph.instagram.com/me/media?fields=${fields}&access_token=${token}&limit=12`
-
   try {
-    const res = await fetch(url)
+    const res = await fetch(
+      `https://graph.instagram.com/me/media?fields=id,caption,media_url,media_type,permalink,timestamp&access_token=${token}&limit=12`,
+      { next: { revalidate: 3600 } }
+    )
+    
     const data = await res.json()
     
-    console.log("INSTA RESPONSE:", data) // رح يطلع بالترمنال
-    
-    if (data.error) {
-      return NextResponse.json({ error: data.error.message, full: data }, { status: 400 })
+    if (!res.ok) {
+      console.log('IG Error:', data)
+      return NextResponse.json({ error: data, posts: [] }, { status: 500 })
     }
-    
-    return NextResponse.json(data.data)
-  } catch (e:any) {
-    return NextResponse.json({ error: e.message }, { status: 500 })
+
+    return NextResponse.json({ posts: data.data })
+  } catch (e) {
+    return NextResponse.json({ error: 'fetch failed', posts: [] }, { status: 500 })
   }
 }
