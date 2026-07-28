@@ -154,7 +154,7 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
   display:'flex',
   alignItems:'center',
   justifyContent:'center',
-  backgroundImage:`url('/products/vitamin-c/3.png')`,
+  backgroundImage:`url('/products/vitamin-c/2.png')`,
   backgroundSize:'cover',
   backgroundPosition:'center',
   overflow:'hidden'
@@ -163,7 +163,7 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
   <div style={{
     position:'absolute',
     inset:0,
-    background:'linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45))',
+    background:'linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.45))',
     backdropFilter:'blur(1px)'
   }}></div>
 
