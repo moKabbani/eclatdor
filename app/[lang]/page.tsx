@@ -140,15 +140,15 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
 
   return (
     <main dir={isAr?'rtl':'ltr'} style={{background:'#eaeaea', fontFamily:'system-ui'}}>
-      <header style={{display:'flex', justifyContent:'space-between', padding:'14px 32px', borderBottom:'1px solid #eee', position:'sticky', top:0, background:'#fff', zIndex:50, alignItems:'center'}}>
-        <Link href={`/${lang}`} style={{display:'flex', alignItems:'center'}}>
-  <img src="/logo.png" alt="Éclat Dor" style={{height:'90px', width:'auto', objectFit:'contain'}} />
-</Link>
-        <nav style={{display:'flex', gap:'18px', fontSize:'12px', alignItems:'center'}}>
-          {nav.map(n=><Link key={n.label} href={n.href} style={{textDecoration:'none', color: n.black?'#fff':'#000', background: n.black?'#000':'transparent', padding: n.black?'8px 14px':'0', borderRadius: n.black?'20px':'0'}}>{n.label}</Link>)}
-        </nav>
-        <div style={{display:'flex', gap:'6px'}}>{langs.map(l=><Link key={l.code} href={`/${l.code}`} style={{padding:'5px 10px', borderRadius:'20px', border:'1px solid #000', fontSize:'11px', background: lang===l.code?'#000':'#fff', color: lang===l.code?'#fff':'#000', textDecoration:'none'}}>{l.label}</Link>)}</div>
-      </header>
+      <header style={{display:'flex', justifyContent:'space-between', padding:'14px 32px', borderBottom:'1px solid #ddd', position:'sticky', top:0, background:'#eaeaea', zIndex:50, alignItems:'center'}}>
+  <Link href={`/${lang}`} style={{display:'flex', alignItems:'center'}}>
+    <img src="/logo.png" alt="Éclat Dor" style={{height:'32px', width:'auto', objectFit:'contain', cursor:'pointer'}} />
+  </Link>
+  <nav style={{display:'flex', gap:'18px', fontSize:'12px', alignItems:'center'}}>
+    {nav.map(n=><Link key={n.label} href={n.href} style={{textDecoration:'none', color: n.black?'#fff':'#000', background: n.black?'#000':'transparent', padding: n.black?'8px 14px':'0', borderRadius: n.black?'20px':'0', fontWeight:500}}>{n.label}</Link>)}
+  </nav>
+  <div style={{display:'flex', gap:'6px'}}>{langs.map(l=><Link key={l.code} href={`/${l.code}`} style={{padding:'5px 10px', borderRadius:'20px', border:'1px solid #000', fontSize:'11px', background: lang===l.code?'#000':'#fff', color: lang===l.code?'#fff':'#000', textDecoration:'none'}}>{l.label}</Link>)}</div>
+</header>
 
      <section style={{
   position:'relative',
