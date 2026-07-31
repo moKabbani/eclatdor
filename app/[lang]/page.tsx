@@ -78,21 +78,13 @@ function InstagramSection({ followText }: { followText: string }) {
   const [posts, setPosts] = useState<any[]>([])
   useEffect(() => {
     fetch('/api/instagram').then(r=>r.json()).then(d=>{
-      if(d.posts && Array.isArray(d.posts) && d.posts.length > 0) setPosts(d.posts)
-      else if(Array.isArray(d) && d.length > 0) setPosts(d)
+      if(d.posts && Array.isArray(d.posts)) setPosts(d.posts)
+      else if(Array.isArray(d)) setPosts(d)
     }).catch(()=>{})
   }, [])
 
-  const displayPosts = posts.length > 0? posts : [
-    {id:'1', permalink:'https://instagram.com/eclatdor.me', media_url:'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&q=80', media_type:'IMAGE'},
-    {id:'2', permalink:'https://instagram.com/eclatdor.me', media_url:'https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=400&q=80', media_type:'IMAGE'},
-    {id:'3', permalink:'https://instagram.com/eclatdor.me', media_url:'https://images.unsplash.com/photo-1611262588024-d12430b98920?w=400&q=80', media_type:'IMAGE'},
-    {id:'4', permalink:'https://instagram.com/eclatdor.me', media_url:'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=400&q=80', media_type:'IMAGE'},
-    {id:'5', permalink:'https://instagram.com/eclatdor.me', media_url:'https://images.unsplash.com/photo-1611162617263-4ec3060a058e?w=400&q=80', media_type:'IMAGE'},
-    {id:'6', permalink:'https://instagram.com/eclatdor.me', media_url:'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&q=80', media_type:'IMAGE'},
-  ]
-
-  const loopPosts = [...displayPosts,...displayPosts]
+  if(!posts.length) return null
+  const loopPosts = [...posts,...posts]
 
   return (
     <section style={{padding:'50px 0', background:'#FAF9F7', borderTop:'1px solid #eee', overflow:'hidden'}}>
