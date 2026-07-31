@@ -78,13 +78,21 @@ function InstagramSection({ followText }: { followText: string }) {
   const [posts, setPosts] = useState<any[]>([])
   useEffect(() => {
     fetch('/api/instagram').then(r=>r.json()).then(d=>{
-      if(d.posts && Array.isArray(d.posts)) setPosts(d.posts)
-      else if(Array.isArray(d)) setPosts(d)
+      if(d.posts && Array.isArray(d.posts) && d.posts.length > 0) setPosts(d.posts)
+      else if(Array.isArray(d) && d.length > 0) setPosts(d)
     }).catch(()=>{})
   }, [])
 
-  if(!posts.length) return null
-  const loopPosts = [...posts,...posts]
+  const displayPosts = posts.length > 0? posts : [
+    {id:'1', permalink:'https://instagram.com/eclatdor.me', media_url:'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&q=80', media_type:'IMAGE'},
+    {id:'2', permalink:'https://instagram.com/eclatdor.me', media_url:'https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=400&q=80', media_type:'IMAGE'},
+    {id:'3', permalink:'https://instagram.com/eclatdor.me', media_url:'https://images.unsplash.com/photo-1611262588024-d12430b98920?w=400&q=80', media_type:'IMAGE'},
+    {id:'4', permalink:'https://instagram.com/eclatdor.me', media_url:'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=400&q=80', media_type:'IMAGE'},
+    {id:'5', permalink:'https://instagram.com/eclatdor.me', media_url:'https://images.unsplash.com/photo-1611162617263-4ec3060a058e?w=400&q=80', media_type:'IMAGE'},
+    {id:'6', permalink:'https://instagram.com/eclatdor.me', media_url:'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&q=80', media_type:'IMAGE'},
+  ]
+
+  const loopPosts = [...displayPosts,...displayPosts]
 
   return (
     <section style={{padding:'50px 0', background:'#FAF9F7', borderTop:'1px solid #eee', overflow:'hidden'}}>
@@ -141,41 +149,39 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
   return (
     <main dir={isAr?'rtl':'ltr'} style={{background:'#eaeaea', fontFamily:'system-ui'}}>
       <header style={{display:'flex', justifyContent:'space-between', padding:'14px 32px', borderBottom:'1px solid #ddd', position:'sticky', top:0, background:'#eaeaea', zIndex:50, alignItems:'center'}}>
-  <Link href={`/${lang}`} style={{display:'flex', alignItems:'center'}}>
-    <img src="/logo.png" alt="Éclat Dor" style={{height:'45px', width:'auto', objectFit:'contain', cursor:'pointer'}} />
-  </Link>
-  <nav style={{display:'flex', gap:'18px', fontSize:'12px', alignItems:'center'}}>
-    {nav.map(n=><Link key={n.label} href={n.href} style={{textDecoration:'none', color: n.black?'#fff':'#000', background: n.black?'#000':'transparent', padding: n.black?'8px 14px':'0', borderRadius: n.black?'20px':'0', fontWeight:500}}>{n.label}</Link>)}
-  </nav>
-  <div style={{display:'flex', gap:'6px'}}>{langs.map(l=><Link key={l.code} href={`/${l.code}`} style={{padding:'5px 10px', borderRadius:'20px', border:'1px solid #000', fontSize:'11px', background: lang===l.code?'#000':'#fff', color: lang===l.code?'#fff':'#000', textDecoration:'none'}}>{l.label}</Link>)}</div>
-</header>
+        <Link href={`/${lang}`} style={{display:'flex', alignItems:'center'}}>
+          <img src="/logo.png" alt="Éclat Dor" style={{height:'45px', width:'auto', objectFit:'contain', cursor:'pointer'}} />
+        </Link>
+        <nav style={{display:'flex', gap:'18px', fontSize:'12px', alignItems:'center'}}>
+          {nav.map(n=><Link key={n.label} href={n.href} style={{textDecoration:'none', color: n.black?'#fff':'#000', background: n.black?'#000':'transparent', padding: n.black?'8px 14px':'0', borderRadius: n.black?'20px':'0', fontWeight:500}}>{n.label}</Link>)}
+        </nav>
+        <div style={{display:'flex', gap:'6px'}}>{langs.map(l=><Link key={l.code} href={`/${l.code}`} style={{padding:'5px 10px', borderRadius:'20px', border:'1px solid #000', fontSize:'11px', background: lang===l.code?'#000':'#fff', color: lang===l.code?'#fff':'#000', textDecoration:'none'}}>{l.label}</Link>)}</div>
+      </header>
 
-     <section style={{
-  position:'relative',
-  minHeight:'85vh',
-  display:'flex',
-  alignItems:'center',
-  justifyContent:'center',
-  backgroundImage:`url('/products/vitamin-c/2.png')`,
-  backgroundSize:'cover',
-  backgroundPosition:'center',
-  overflow:'hidden'
-}}>
-  {/* طبقة التعتيم */}
-  <div style={{
-    position:'absolute',
-    inset:0,
-    background:'linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.45))',
-    backdropFilter:'blur(1px)'
-  }}></div>
+      <section style={{
+        position:'relative',
+        minHeight:'85vh',
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'center',
+        backgroundImage:`url('/products/vitamin-c/2.png')`,
+        backgroundSize:'cover',
+        backgroundPosition:'center',
+        overflow:'hidden'
+      }}>
+        <div style={{
+          position:'absolute',
+          inset:0,
+          background:'linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.45))',
+          backdropFilter:'blur(1px)'
+        }}></div>
 
-  {/* الكتابة فوق الصورة */}
-  <div style={{position:'relative', zIndex:2, textAlign:'center', padding:'40px', maxWidth:'800px'}}>
-    <p style={{fontSize:'12px', letterSpacing:'5px', color:'#fff', opacity:0.9, marginBottom:'16px'}}>{t.heroSmall}</p>
-    <h1 style={{fontSize:'56px', lineHeight:1.15, fontWeight:500, color:'#fff', textShadow:'0 4px 20px rgba(0,0,0,0.3)'}}>{t.heroTitle}</h1>
-    <Link href={`/${lang}/products`} style={{background:'#fff', color:'#000', padding:'16px 32px', borderRadius:'30px', textDecoration:'none', display:'inline-block', marginTop:'28px', fontSize:'14px', fontWeight:600}}>{t.shop}</Link>
-  </div>
-</section>
+        <div style={{position:'relative', zIndex:2, textAlign:'center', padding:'40px', maxWidth:'800px'}}>
+          <p style={{fontSize:'12px', letterSpacing:'5px', color:'#fff', opacity:0.9, marginBottom:'16px'}}>{t.heroSmall}</p>
+          <h1 style={{fontSize:'56px', lineHeight:1.15, fontWeight:500, color:'#fff', textShadow:'0 4px 20px rgba(0,0,0,0.3)'}}>{t.heroTitle}</h1>
+          <Link href={`/${lang}/products`} style={{background:'#fff', color:'#000', padding:'16px 32px', borderRadius:'30px', textDecoration:'none', display:'inline-block', marginTop:'28px', fontSize:'14px', fontWeight:600}}>{t.shop}</Link>
+        </div>
+      </section>
 
       <section style={{padding:'90px 20px', background:'#fff', textAlign:'center'}}>
         <div style={{display:'flex', alignItems:'center', justifyContent:'center', gap:'12px', marginBottom:'20px'}}>
@@ -231,7 +237,7 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
         </div>
       </section>
 
-            <footer style={{background:'#0A0A0A', color:'#fff', padding:'60px 50px 24px', direction:'ltr'}}>
+      <footer style={{background:'#0A0A0A', color:'#fff', padding:'60px 50px 24px', direction:'ltr'}}>
         <div style={{display:'grid', gridTemplateColumns:'1.6fr 1fr 1fr 1.6fr', gap:'40px', paddingBottom:'40px', borderBottom:'1px solid #1E1E1E', textAlign:'left'}}>
           <div style={{direction: isAr?'rtl':'ltr'}}>
             <div style={{border:'2px solid #fff', display:'inline-block', padding:'7px 16px', fontWeight:800, letterSpacing:'2px', fontSize:'18px'}}>Éclat Dor</div>
