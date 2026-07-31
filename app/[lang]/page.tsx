@@ -139,7 +139,7 @@ export default function Home({ params }: { params: Promise<{ lang: string }> }) 
   ]
 
   return (
-    <main dir={isAr?'rtl':'ltr'} style={{background:'#fff', fontFamily:'system-ui'}}>
+    <main dir={isAr?'rtl':'ltr'} style={{background:'#eaeaea', fontFamily:'system-ui'}}>
       <header style={{display:'flex', justifyContent:'space-between', padding:'14px 32px', borderBottom:'1px solid #eee', position:'sticky', top:0, background:'#fff', zIndex:50, alignItems:'center'}}>
         <Link href={`/${lang}`} style={{display:'flex', alignItems:'center'}}>
   <img src="/logo.png" alt="Éclat Dor" style={{height:'90px', width:'auto', objectFit:'contain'}} />
