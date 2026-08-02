@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+import { use } from 'react'
 
 const T: any = {
   ar: {
@@ -83,8 +84,8 @@ const T: any = {
   }
 }
 
-export default function VitaminCPage({ params }: { params: { lang: string } }) {
-  const lang = params.lang
+export default function VitaminCPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = use(params) // هاد السطر حل مشكلة اللغة
   const t = T[lang] || T.ar
   const isAr = lang === 'ar'
 
@@ -101,21 +102,15 @@ export default function VitaminCPage({ params }: { params: { lang: string } }) {
   return (
     <main dir={isAr?'rtl':'ltr'} style={{background:'#fff', padding:'60px 20px'}}>
       <style>{`
-    .product-grid {
+   .product-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 60px;
           max-width: 1200px;
           margin: 0 auto 80px;
         }
-        ${isAr? `
-        @media (min-width: 769px) {
-        .product-grid > div:first-child { order: 2; }
-        .product-grid > div:last-child { order: 1; }
-        }
-        ` : ''}
         @media (max-width: 768px) {
-      .product-grid {
+     .product-grid {
             grid-template-columns: 1fr;
             gap: 40px;
           }
@@ -124,8 +119,8 @@ export default function VitaminCPage({ params }: { params: { lang: string } }) {
 
       <div className="product-grid">
 
-        {/* الصور + زر الواتساب */}
-        <div>
+        {/* الصور + زر الواتساب - رح يطلع يمين بالعربي */}
+        <div style={{order: isAr? 1 : 2}}>
           <div style={{
             width:'100%',
             aspectRatio:'1/1',
@@ -153,8 +148,8 @@ export default function VitaminCPage({ params }: { params: { lang: string } }) {
           </a>
         </div>
 
-        {/* التفاصيل */}
-        <div>
+        {/* التفاصيل - رح يطلع شمال بالعربي */}
+        <div style={{order: isAr? 2 : 1}}>
           <h1 style={{fontSize:'28px', marginBottom:'8px', fontWeight:700, lineHeight:'1.3'}}>{t.prodTitle}</h1>
           <p style={{fontSize:'14px', opacity:0.6, marginBottom:'24px'}}>{t.prodSubtitle}</p>
 
