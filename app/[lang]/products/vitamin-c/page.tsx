@@ -6,12 +6,12 @@ const T: any = {
   ar: {
     prodTitle: 'سيروم فيتامين سي 5% - Éclat d\'or',
     prodSubtitle: 'تركيبة طبية مدروسة للإشراقة والحماية',
-    forUserTitle: 'ليش تحتاجيه لبشرتك؟',
+    forUserTitle: 'وصف المنتج',
     forUserPoints: [
-      ' إشراقة فورية: بيعطي نضارة وبيشيل البهتان من أول اسبوع',
-      ' درع حماية: بيحارب التصبغات والبقع اللي بتطلع من الشمس',
-      ' ترطيب عميق: مع الهيالورونيك اسيد، ما بينشف بشرتك ابداً',
-      ' خفيف عالبشرة: مناسب للبشرة الحساسة وما بيعمل حبوب'
+      'سيروم فيتامين C بتركيز 5% مصمم خصيصاً لتفتيح البشرة وتوحيد لونها',
+      'تركيبة متطورة تجمع بين L-Ascorbic Acid النقي مع Ferulic Acid و Vitamin E',
+      'قوام خفيف سريع الامتصاص، لا يترك ملمس دهني او لزج على البشرة',
+      'مناسب لجميع انواع البشرة بما فيها الحساسة، خالي من البارابين والعطور'
     ],
     forDoctorTitle: 'المرجع العلمي للتركيبة',
     forDoctorDesc: 'تركيبة متوازنة تجمع بين L-Ascorbic Acid 5% المثبت سريرياً مع Ferulic Acid و Vitamin E لتضاعف الفعالية والثباتية.',
@@ -27,18 +27,17 @@ const T: any = {
     ingredients: 'المكونات الفعالة',
     activeIngredients: 'Vitamin C 5%, Ferulic Acid, Vitamin E, Hyaluronic Acid',
     orderBtn: 'اطلب عبر واتساب ←',
-    shipping: 'شحن يومي • دفع عند الاستلام • منتج أصلي 100%',
     backToProducts: '← العودة لكل المنتجات'
   },
   en: {
     prodTitle: 'Vitamin C 5% Serum - Éclat d\'or',
     prodSubtitle: 'Clinically-balanced formula for radiance and protection',
-    forUserTitle: 'Why does your skin need it?',
+    forUserTitle: 'Product Description',
     forUserPoints: [
-      ' Instant Glow: Gives radiance and removes dullness from the first week',
-      ' Protection Shield: Fights pigmentation and sun spots',
-      ' Deep Hydration: With Hyaluronic Acid, never dries your skin',
-      ' Light on skin: Suitable for sensitive skin and non-comedogenic'
+      '5% Vitamin C serum specially designed to brighten and even skin tone',
+      'Advanced formula combining pure L-Ascorbic Acid with Ferulic Acid and Vitamin E',
+      'Lightweight fast-absorbing texture, leaves no greasy or sticky feel',
+      'Suitable for all skin types including sensitive, paraben and fragrance free'
     ],
     forDoctorTitle: 'Scientific Formula Reference',
     forDoctorDesc: 'Balanced formula combining clinically proven L-Ascorbic Acid 5% with Ferulic Acid and Vitamin E to double efficacy and stability.',
@@ -54,18 +53,17 @@ const T: any = {
     ingredients: 'Active Ingredients',
     activeIngredients: 'Vitamin C 5%, Ferulic Acid, Vitamin E, Hyaluronic Acid',
     orderBtn: 'Order via WhatsApp →',
-    shipping: 'Daily shipping • Cash on delivery • 100% Original',
     backToProducts: '← Back to all products'
   },
   tr: {
     prodTitle: 'C Vitamini %5 Serum - Éclat d\'or',
     prodSubtitle: 'Aydınlık ve koruma için klinik formül',
-    forUserTitle: 'Cildinizin buna neden ihtiyacı var?',
+    forUserTitle: 'Ürün Açıklaması',
     forUserPoints: [
-      ' Anında Parlaklık: İlk haftadan itibaren donukluğu giderir',
-      ' Koruma Kalkanı: Güneş lekeleri ve pigmentasyonla savaşır',
-      ' Derin Nem: Hyaluronik Asit ile cildinizi kurutmaz',
-      ' Cilt Dostu: Hassas ciltler için uygun, komedojenik değil'
+      'Cildi aydınlatmak ve tonunu eşitlemek için özel tasarlanmış %5 C Vitamini serumu',
+      'Saf L-Askorbik Asit\'i Ferulik Asit ve E Vitamini ile birleştiren gelişmiş formül',
+      'Hızlı emilen hafif doku, yağlı veya yapışkan his bırakmaz',
+      'Hassas dahil tüm cilt tiplerine uygun, paraben ve parfüm içermez'
     ],
     forDoctorTitle: 'Bilimsel Formül Referansı',
     forDoctorDesc: 'Klinik olarak kanıtlanmış L-Askorbik Asit %5\'i, etkinlik ve stabiliteyi ikiye katlamak için Ferulik Asit ve E Vitamini ile birleştiren dengeli formül.',
@@ -81,14 +79,13 @@ const T: any = {
     ingredients: 'Aktif İçerikler',
     activeIngredients: 'C Vitamini %5, Ferulik Asit, E Vitamini, Hyaluronik Asit',
     orderBtn: 'WhatsApp ile Sipariş Ver →',
-    shipping: 'Günlük kargo • Kapıda ödeme • %100 Orijinal',
     backToProducts: '← Tüm ürünlere dön'
   }
 }
 
 export default function VitaminCPage({ params }: { params: { lang: string } }) {
   const lang = params.lang
-  const t = T[lang] || T.ar // غيرتها لـ ar كـ fallback بدل en
+  const t = T[lang] || T.ar
   const isAr = lang === 'ar'
 
   const images = [
@@ -104,7 +101,7 @@ export default function VitaminCPage({ params }: { params: { lang: string } }) {
   return (
     <main dir={isAr?'rtl':'ltr'} style={{background:'#fff', padding:'60px 20px'}}>
       <style>{`
-     .product-grid {
+    .product-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 60px;
@@ -113,12 +110,12 @@ export default function VitaminCPage({ params }: { params: { lang: string } }) {
         }
         ${isAr? `
         @media (min-width: 769px) {
-         .product-grid > div:first-child { order: 2; }
-         .product-grid > div:last-child { order: 1; }
+        .product-grid > div:first-child { order: 2; }
+        .product-grid > div:last-child { order: 1; }
         }
         ` : ''}
         @media (max-width: 768px) {
-       .product-grid {
+      .product-grid {
             grid-template-columns: 1fr;
             gap: 40px;
           }
@@ -127,7 +124,7 @@ export default function VitaminCPage({ params }: { params: { lang: string } }) {
 
       <div className="product-grid">
 
-        {/* الصور */}
+        {/* الصور + زر الواتساب */}
         <div>
           <div style={{
             width:'100%',
@@ -143,13 +140,17 @@ export default function VitaminCPage({ params }: { params: { lang: string } }) {
           }}>
             <img src={images[activeImg]} alt={t.prodTitle} style={{width:'100%', height:'100%', objectFit:'contain'}} />
           </div>
-          <div style={{display:'flex', gap:'12px', overflowX:'auto', paddingBottom:'10px'}}>
+          <div style={{display:'flex', gap:'12px', overflowX:'auto', paddingBottom:'10px', marginBottom:'20px'}}>
             {images.map((img,i)=>(
               <button key={i} onClick={()=>setActiveImg(i)} style={{width:'80px', height:'80px', borderRadius:'12px', overflow:'hidden', border: activeImg===i?'2px solid #000':'1px solid #ddd', padding:0, cursor:'pointer', opacity: activeImg===i?1:0.6, background:'#fff', flexShrink:0}}>
                 <img src={img} style={{width:'100%', height:'100%', objectFit:'cover'}} />
               </button>
             ))}
           </div>
+
+          <a href="https://wa.me/905070000440?text=Vitamin C 5% Serum" target="_blank" style={{background:'#000', color:'#fff', padding:'16px 32px', borderRadius:'30px', textDecoration:'none', display:'block', textAlign:'center', fontSize:'16px', fontWeight:600}}>
+            {t.orderBtn}
+          </a>
         </div>
 
         {/* التفاصيل */}
@@ -161,12 +162,6 @@ export default function VitaminCPage({ params }: { params: { lang: string } }) {
             <h3 style={{margin:'0 0 12px', fontSize:'15px'}}>{t.ingredients}</h3>
             <p style={{margin:0, fontSize:'13px', opacity:0.7}}>{t.activeIngredients}</p>
           </div>
-
-          <a href="https://wa.me/905070000440?text=Vitamin C 5% Serum" target="_blank" style={{background:'#000', color:'#fff', padding:'16px 32px', borderRadius:'30px', textDecoration:'none', display:'block', textAlign:'center', fontSize:'16px', fontWeight:600, marginBottom:'16px'}}>
-            {t.orderBtn}
-          </a>
-
-          <p style={{fontSize:'12px', opacity:0.6, textAlign:'center'}}>{t.shipping}</p>
 
           <Link href={`/${lang}/products`} style={{display:'block', textAlign:'center', marginTop:'24px', fontSize:'14px', color:'#000'}}>{t.backToProducts}</Link>
         </div>
