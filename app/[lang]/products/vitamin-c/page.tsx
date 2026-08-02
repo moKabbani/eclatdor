@@ -8,10 +8,10 @@ const T: any = {
     prodSubtitle: 'تركيبة طبية مدروسة للإشراقة والحماية',
     forUserTitle: 'ليش تحتاجيه لبشرتك؟',
     forUserPoints: [
-      '✨ إشراقة فورية: بيعطي نضارة وبيشيل البهتان من أول اسبوع',
-      '🛡 درع حماية: بيحارب التصبغات والبقع اللي بتطلع من الشمس',
-      '💧 ترطيب عميق: مع الهيالورونيك اسيد، ما بينشف بشرتك ابداً',
-      '🌿 خفيف عالبشرة: مناسب للبشرة الحساسة وما بيعمل حبوب'
+      ' إشراقة فورية: بيعطي نضارة وبيشيل البهتان من أول اسبوع',
+      ' درع حماية: بيحارب التصبغات والبقع اللي بتطلع من الشمس',
+      ' ترطيب عميق: مع الهيالورونيك اسيد، ما بينشف بشرتك ابداً',
+      ' خفيف عالبشرة: مناسب للبشرة الحساسة وما بيعمل حبوب'
     ],
     forDoctorTitle: 'المرجع العلمي للتركيبة',
     forDoctorDesc: 'تركيبة متوازنة تجمع بين L-Ascorbic Acid 5% المثبت سريرياً مع Ferulic Acid و Vitamin E لتضاعف الفعالية والثباتية.',
@@ -35,10 +35,10 @@ const T: any = {
     prodSubtitle: 'Clinically-balanced formula for radiance and protection',
     forUserTitle: 'Why does your skin need it?',
     forUserPoints: [
-      '✨ Instant Glow: Gives radiance and removes dullness from the first week',
-      '🛡 Protection Shield: Fights pigmentation and sun spots',
-      '💧 Deep Hydration: With Hyaluronic Acid, never dries your skin',
-      '🌿 Light on skin: Suitable for sensitive skin and non-comedogenic'
+      ' Instant Glow: Gives radiance and removes dullness from the first week',
+      ' Protection Shield: Fights pigmentation and sun spots',
+      ' Deep Hydration: With Hyaluronic Acid, never dries your skin',
+      ' Light on skin: Suitable for sensitive skin and non-comedogenic'
     ],
     forDoctorTitle: 'Scientific Formula Reference',
     forDoctorDesc: 'Balanced formula combining clinically proven L-Ascorbic Acid 5% with Ferulic Acid and Vitamin E to double efficacy and stability.',
@@ -62,10 +62,10 @@ const T: any = {
     prodSubtitle: 'Aydınlık ve koruma için klinik formül',
     forUserTitle: 'Cildinizin buna neden ihtiyacı var?',
     forUserPoints: [
-      '✨ Anında Parlaklık: İlk haftadan itibaren donukluğu giderir',
-      '🛡 Koruma Kalkanı: Güneş lekeleri ve pigmentasyonla savaşır',
-      '💧 Derin Nem: Hyaluronik Asit ile cildinizi kurutmaz',
-      '🌿 Cilt Dostu: Hassas ciltler için uygun, komedojenik değil'
+      ' Anında Parlaklık: İlk haftadan itibaren donukluğu giderir',
+      ' Koruma Kalkanı: Güneş lekeleri ve pigmentasyonla savaşır',
+      ' Derin Nem: Hyaluronik Asit ile cildinizi kurutmaz',
+      ' Cilt Dostu: Hassas ciltler için uygun, komedojenik değil'
     ],
     forDoctorTitle: 'Bilimsel Formül Referansı',
     forDoctorDesc: 'Klinik olarak kanıtlanmış L-Askorbik Asit %5\'i, etkinlik ve stabiliteyi ikiye katlamak için Ferulik Asit ve E Vitamini ile birleştiren dengeli formül.',
@@ -88,7 +88,7 @@ const T: any = {
 
 export default function VitaminCPage({ params }: { params: { lang: string } }) {
   const lang = params.lang
-  const t = T[lang] || T.en
+  const t = T[lang] || T.ar // غيرتها لـ ar كـ fallback بدل en
   const isAr = lang === 'ar'
 
   const images = [
@@ -104,16 +104,21 @@ export default function VitaminCPage({ params }: { params: { lang: string } }) {
   return (
     <main dir={isAr?'rtl':'ltr'} style={{background:'#fff', padding:'60px 20px'}}>
       <style>{`
-      .product-grid {
+     .product-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 60px;
           max-width: 1200px;
           margin: 0 auto 80px;
-          direction: ${isAr? 'rtl' : 'ltr'};
         }
+        ${isAr? `
+        @media (min-width: 769px) {
+         .product-grid > div:first-child { order: 2; }
+         .product-grid > div:last-child { order: 1; }
+        }
+        ` : ''}
         @media (max-width: 768px) {
-        .product-grid {
+       .product-grid {
             grid-template-columns: 1fr;
             gap: 40px;
           }
