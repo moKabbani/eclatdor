@@ -94,8 +94,6 @@ export default function SalicylicPage({ params }: { params: Promise<{ lang: stri
     '/products/salicylic/2.png',
     '/products/salicylic/3.png',
     '/products/salicylic/4.png',
-    '/products/salicylic/5.png',
-    '/products/salicylic/6.png',
   ]
 
   const [activeImg, setActiveImg] = useState(0)
