@@ -5,97 +5,97 @@ import { use } from 'react'
 
 const T: any = {
   ar: {
-    prodTitle: 'سيروم الريتينول 0.3% - Éclat d\'or',
-    prodSubtitle: 'تركيبة متقدمة لمحاربة التجاعيد وتجديد البشرة',
+    prodTitle: 'سيروم الساليسيليك اسيد 2% - Éclat d\'or',
+    prodSubtitle: 'تركيبة فعالة لتنظيف المسام ومحاربة حب الشباب',
     forUserTitle: 'وصف المنتج',
     forUserPoints: [
-      'سيروم ريتينول بتركيز 0.3% مصمم خصيصاً لتقليل التجاعيد والخطوط الدقيقة',
-      'تركيبة مغلفة بتقنية Encapsulated Retinol لاطلاق بطيء بدون تهيج',
-      'يحفز تجدد الخلايا ويوحد لون البشرة ويقلص المسام الواسعة',
-      'مدعم بـ Niacinamide و Hyaluronic Acid لتهدئة البشرة ومنع الجفاف'
+      'سيروم ساليسيليك اسيد بتركيز 2% مصمم خصيصاً للبشرة الدهنية والمعرضة لحب الشباب',
+      'حمض BHA يخترق المسام بعمق ويذيب الدهون والرؤوس السوداء',
+      'يقشر البشرة بلطف ويقلل الالتهاب والاحمرار المصاحب للحبوب',
+      'مدعم بـ Niacinamide و Zinc PCA لتنظيم افراز الدهون وتهدئة البشرة'
     ],
     forDoctorTitle: 'المرجع العلمي للتركيبة',
-    forDoctorDesc: 'ريتينول 0.3% مغلف بتقنية Micro-encapsulation يضمن اطلاق تدريجي للفعالية مع تقليل التهيج بنسبة 70% مقارنة بالريتينول التقليدي.',
+    forDoctorDesc: 'حمض الساليسيليك 2% - التركيز الاقصى المسموح OTC - يعمل كـ keratolytic يذيب الروابط بين خلايا الجلد الميتة داخل المسام.',
     forDoctorPoints: [
-      'Encapsulated Retinol 0.3%: يتحول الى Retinoic Acid داخل البشرة، يحفز الكولاجين والايلاستين',
-      'Niacinamide 5%: يقوي حاجز البشرة ويقلل الاحمرار المصاحب للريتينول',
-      'Hyaluronic Acid: يعوض الجفاف ويحافظ على الترطيب اثناء التقشير',
-      'Vitamin E: مضاد اكسدة يحمي الريتينول من التأكسد ويزيد الثباتية'
+      'Salicylic Acid 2%: BHA قابل للذوبان بالدهون، يخترق المسام ويفكك الكوميدون',
+      'Niacinamide 4%: ينظم افراز الزهم ويقلل حجم المسام الظاهري',
+      'Zinc PCA 1%: مضاد بكتيريا طبيعي يتحكم بالـ P.acnes المسبب لحب الشباب',
+      'Aloe Vera: يهدئ التهيج ويعوض الجفاف المحتمل من التقشير'
     ],
     howToUse: 'طريقة الاستخدام',
-    howToUseText: 'مساءً فقط على بشرة نظيفة وجافة. ابدأي مرتين اسبوعياً وزيدي تدريجياً. استخدمي واقي شمس صباحاً ضروري',
-    proTip: 'نصيحة خبير: ينصح باستخدم  مرطب قبل وبعد الريتينول للبشرة الحساسة',
+    howToUseText: 'مساءً على بشرة نظيفة وجافة. ابدأي 3 مرات اسبوعياً وزيدي تدريجياً. تجنبي منطقة العين. واقي شمس صباحاً ضروري',
+    proTip: 'نصيحة خبير: لا تخلطيه مع الريتينول بنفس الليلة. استخدمي الساليسيليك صباحاً والريتينول مساءً',
     ingredients: 'المكونات الفعالة',
-    activeIngredients: 'Retinol 0.3%, Niacinamide 5%, Hyaluronic Acid, Vitamin E',
+    activeIngredients: 'Salicylic Acid 2%, Niacinamide 4%, Zinc PCA, Aloe Vera',
     orderBtn: 'اطلب عبر واتساب ←',
     backToProducts: '← العودة لكل المنتجات'
   },
   en: {
-    prodTitle: 'Retinol 0.3% Serum - Éclat d\'or',
-    prodSubtitle: 'Advanced formula to fight wrinkles and renew skin',
+    prodTitle: 'Salicylic Acid 2% Serum - Éclat d\'or',
+    prodSubtitle: 'Effective formula to cleanse pores and fight acne',
     forUserTitle: 'Product Description',
     forUserPoints: [
-      '0.3% Retinol serum specially designed to reduce wrinkles and fine lines',
-      'Encapsulated Retinol technology for slow release without irritation',
-      'Stimulates cell renewal, evens skin tone and minimizes pores',
-      'Enriched with Niacinamide and Hyaluronic Acid to soothe and prevent dryness'
+      '2% Salicylic Acid serum specially designed for oily and acne-prone skin',
+      'BHA acid penetrates deep into pores dissolving oil and blackheads',
+      'Gently exfoliates skin and reduces inflammation and redness from breakouts',
+      'Enriched with Niacinamide and Zinc PCA to regulate sebum and soothe skin'
     ],
     forDoctorTitle: 'Scientific Formula Reference',
-    forDoctorDesc: '0.3% Micro-encapsulated Retinol ensures gradual release for efficacy with 70% less irritation vs traditional retinol.',
+    forDoctorDesc: 'Salicylic Acid 2% - maximum OTC concentration - acts as keratolytic dissolving bonds between dead cells inside pores.',
     forDoctorPoints: [
-      'Encapsulated Retinol 0.3%: Converts to Retinoic Acid in skin, stimulates collagen and elastin',
-      'Niacinamide 5%: Strengthens skin barrier and reduces retinol-associated redness',
-      'Hyaluronic Acid: Compensates dryness and maintains hydration during exfoliation',
-      'Vitamin E: Antioxidant that protects retinol from oxidation and increases stability'
+      'Salicylic Acid 2%: Oil-soluble BHA, penetrates pores and breaks down comedones',
+      'Niacinamide 4%: Regulates sebum production and reduces visible pore size',
+      'Zinc PCA 1%: Natural antibacterial controlling P.acnes causing acne',
+      'Aloe Vera: Soothes irritation and compensates potential dryness from exfoliation'
     ],
     howToUse: 'How to Use',
-    howToUseText: 'Evening only on clean dry skin. Start twice weekly and increase gradually. Sunscreen in morning is mandatory',
-    proTip: 'Pro tip: Use sandwich method - moisturizer before and after retinol for sensitive skin',
+    howToUseText: 'Evening on clean dry skin. Start 3x weekly and increase gradually. Avoid eye area. Sunscreen in morning is mandatory',
+    proTip: 'Pro tip: Don\'t mix with retinol same night. Use salicylic AM and retinol PM',
     ingredients: 'Active Ingredients',
-    activeIngredients: 'Retinol 0.3%, Niacinamide 5%, Hyaluronic Acid, Vitamin E',
+    activeIngredients: 'Salicylic Acid 2%, Niacinamide 4%, Zinc PCA, Aloe Vera',
     orderBtn: 'Order via WhatsApp →',
     backToProducts: '← Back to all products'
   },
   tr: {
-    prodTitle: 'Retinol %0.3 Serum - Éclat d\'or',
-    prodSubtitle: 'Kırışıklıklarla savaş ve cilt yenileme için gelişmiş formül',
+    prodTitle: 'Salisilik Asit %2 Serum - Éclat d\'or',
+    prodSubtitle: 'Gözenekleri temizleyen ve akneyle savaşan etkili formül',
     forUserTitle: 'Ürün Açıklaması',
     forUserPoints: [
-      'Kırışıklık ve ince çizgileri azaltmak için özel %0.3 Retinol serumu',
-      'Tahriş olmadan yavaş salınım için Kapsüllenmiş Retinol teknolojisi',
-      'Hücre yenilenmesini uyarır, cilt tonunu eşitler ve gözenekleri küçültür',
-      'Niacinamide ve Hyaluronik Asit ile zenginleştirilmiş, yatıştırır ve kuruluğu önler'
+      'Yağlı ve akne eğilimli ciltler için özel %2 Salisilik Asit serumu',
+      'BHA asidi gözeneklere derinlemesine nüfuz eder, yağ ve siyah noktaları çözer',
+      'Cildi nazikçe eksfoliye eder, sivilce kaynaklı iltihap ve kızarıklığı azaltır',
+      'Sebum düzenlemesi ve yatıştırma için Niacinamide ve Zinc PCA ile zenginleştirilmiş'
     ],
     forDoctorTitle: 'Bilimsel Formül Referansı',
-    forDoctorDesc: '%0.3 Mikro-kapsüllenmiş Retinol, geleneksel retinole göre %70 daha az tahrişle etkinlik için kademeli salınım sağlar.',
+    forDoctorDesc: 'Salisilik Asit %2 - maksimum OTC konsantrasyonu - gözenek içindeki ölü hücre bağlarını çözen keratolitik olarak çalışır.',
     forDoctorPoints: [
-      'Kapsüllenmiş Retinol %0.3: Ciltte Retinoik Asit\'e dönüşür, kolajen ve elastini uyarır',
-      'Niacinamide %5: Cilt bariyerini güçlendirir ve retinole bağlı kızarıklığı azaltır',
-      'Hyaluronik Asit: Kuruluk telafi eder ve eksfoliasyon sırasında nemi korur',
-      'E Vitamini: Retinolü oksidasyondan koruyan ve stabiliteyi artıran antioksidan'
+      'Salisilik Asit %2: Yağda çözünen BHA, gözeneklere nüfuz eder ve komedonları parçalar',
+      'Niacinamide %4: Sebum üretimini düzenler ve görünür gözenek boyutunu azaltır',
+      'Zinc PCA %1: Akneye neden olan P.acnes\'i kontrol eden doğal antibakteriyel',
+      'Aloe Vera: Tahrişi yatıştırır ve eksfoliasyondan kaynaklı kuruluğu telafi eder'
     ],
     howToUse: 'Nasıl Kullanılır',
-    howToUseText: 'Sadece akşamları temiz kuru cilde. Haftada iki kez başlayın ve kademeli artırın. Sabah güneş kremi zorunlu',
-    proTip: 'Uzman ipucu: Hassas ciltler için sandviç yöntemi - retinolden önce ve sonra nemlendirici',
+    howToUseText: 'Akşamları temiz kuru cilde. Haftada 3 kez başlayın ve kademeli artırın. Göz çevresinden kaçının. Sabah güneş kremi zorunlu',
+    proTip: 'Uzman ipucu: Retinol ile aynı gece karıştırmayın. Salisilik sabah, retinol akşam kullanın',
     ingredients: 'Aktif İçerikler',
-    activeIngredients: 'Retinol %0.3, Niacinamide %5, Hyaluronik Asit, E Vitamini',
+    activeIngredients: 'Salisilik Asit %2, Niacinamide %4, Zinc PCA, Aloe Vera',
     orderBtn: 'WhatsApp ile Sipariş Ver →',
     backToProducts: '← Tüm ürünlere dön'
   }
 }
 
-export default function RetinolPage({ params }: { params: Promise<{ lang: string }> }) {
+export default function SalicylicPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = use(params)
   const t = T[lang] || T.ar
   const isAr = lang === 'ar'
 
   const images = [
-    '/products/retinol/1.png',
-    '/products/retinol/2.png',
-    '/products/retinol/3.png',
-    '/products/retinol/4.png',
-    '/products/retinol/5.png',
-    '/products/retinol/6.png',
+    '/products/salicylic/1.png',
+    '/products/salicylic/2.png',
+    '/products/salicylic/3.png',
+    '/products/salicylic/4.png',
+    '/products/salicylic/5.png',
+    '/products/salicylic/6.png',
   ]
 
   const [activeImg, setActiveImg] = useState(0)
@@ -118,7 +118,7 @@ export default function RetinolPage({ params }: { params: Promise<{ lang: string
             <div style={{
               width:'100%',
               aspectRatio:'1/1',
-              background:'#E8E8E8',
+              background:'#E8F5E9',
               borderRadius:'24px',
               overflow:'hidden',
               display:'flex',
@@ -136,7 +136,7 @@ export default function RetinolPage({ params }: { params: Promise<{ lang: string
               ))}
             </div>
 
-            <a href="https://wa.me/905070000440?text=Retinol 0.3% Serum" target="_blank" style={{background:'#000', color:'#fff', padding:'16px 32px', borderRadius:'30px', textDecoration:'none', display:'block', textAlign:'center', fontSize:'16px', fontWeight:600}}>
+            <a href="https://wa.me/905070000440?text=Salicylic Acid 2% Serum" target="_blank" style={{background:'#000', color:'#fff', padding:'16px 32px', borderRadius:'30px', textDecoration:'none', display:'block', textAlign:'center', fontSize:'16px', fontWeight:600}}>
               {t.orderBtn}
             </a>
           </div>
