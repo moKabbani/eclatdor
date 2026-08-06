@@ -5,96 +5,97 @@ import { use } from 'react'
 
 const T: any = {
   ar: {
-    prodTitle: 'سيروم فيتامين سي 5% - Éclat d\'or',
-    prodSubtitle: 'تركيبة طبية مدروسة للإشراقة والحماية',
+    prodTitle: 'سيروم الريتينول 0.3% - Éclat d\'or',
+    prodSubtitle: 'تركيبة متقدمة لمحاربة التجاعيد وتجديد البشرة',
     forUserTitle: 'وصف المنتج',
     forUserPoints: [
-      'سيروم فيتامين C بتركيز 5% مصمم خصيصاً لتفتيح البشرة وتوحيد لونها',
-      'تركيبة متطورة تجمع بين L-Ascorbic Acid النقي مع Ferulic Acid و Vitamin E',
-      'قوام خفيف سريع الامتصاص، لا يترك ملمس دهني او لزج على البشرة',
-      'مناسب لجميع انواع البشرة بما فيها الحساسة، خالي من البارابين والعطور'
+      'سيروم ريتينول بتركيز 0.3% مصمم خصيصاً لتقليل التجاعيد والخطوط الدقيقة',
+      'تركيبة مغلفة بتقنية Encapsulated Retinol لاطلاق بطيء بدون تهيج',
+      'يحفز تجدد الخلايا ويوحد لون البشرة ويقلص المسام الواسعة',
+      'مدعم بـ Niacinamide و Hyaluronic Acid لتهدئة البشرة ومنع الجفاف'
     ],
     forDoctorTitle: 'المرجع العلمي للتركيبة',
-    forDoctorDesc: 'تركيبة متوازنة تجمع بين L-Ascorbic Acid 5% المثبت سريرياً مع Ferulic Acid و Vitamin E لتضاعف الفعالية والثباتية.',
+    forDoctorDesc: 'ريتينول 0.3% مغلف بتقنية Micro-encapsulation يضمن اطلاق تدريجي للفعالية مع تقليل التهيج بنسبة 70% مقارنة بالريتينول التقليدي.',
     forDoctorPoints: [
-      'L-Ascorbic Acid 5%: التركيز المثالي للاستخدام اليومي بدون تهيج، يحفز الكولاجين ويفتح التصبغات',
-      'Ferulic Acid 0.5%: يضاعف فعالية وثباتية فيتامين C بـ 8 مرات',
-      'Vitamin E 1%: مضاد أكسدة يعمل بتآزر ويقلل الالتهاب',
-      'Hyaluronic Acid: وزن جزيئي منخفض لاختراق عميق ومنع الجفاف'
+      'Encapsulated Retinol 0.3%: يتحول الى Retinoic Acid داخل البشرة، يحفز الكولاجين والايلاستين',
+      'Niacinamide 5%: يقوي حاجز البشرة ويقلل الاحمرار المصاحب للريتينول',
+      'Hyaluronic Acid: يعوض الجفاف ويحافظ على الترطيب اثناء التقشير',
+      'Vitamin E: مضاد اكسدة يحمي الريتينول من التأكسد ويزيد الثباتية'
     ],
     howToUse: 'طريقة الاستخدام',
-    howToUseText: '4-5 نقط على بشرة نظيفة صباحاً قبل واقي الشمس. للبشرة الحساسة: ابدأي يوم اي يوم لا',
-    proTip: 'نصيحة خبير: يحفظ بمكان بارد لزيادة الثباتية والشعور بالانتعاش',
+    howToUseText: 'مساءً فقط على بشرة نظيفة وجافة. ابدأي مرتين اسبوعياً وزيدي تدريجياً. استخدمي واقي شمس صباحاً ضروري',
+    proTip: 'نصيحة خبير: استخدمي طريقة الساندويتش - مرطب قبل وبعد الريتينول للبشرة الحساسة',
     ingredients: 'المكونات الفعالة',
-    activeIngredients: 'Vitamin C 5%, Ferulic Acid, Vitamin E, Hyaluronic Acid',
+    activeIngredients: 'Retinol 0.3%, Niacinamide 5%, Hyaluronic Acid, Vitamin E',
     orderBtn: 'اطلب عبر واتساب ←',
     backToProducts: '← العودة لكل المنتجات'
   },
   en: {
-    prodTitle: 'Vitamin C 5% Serum - Éclat d\'or',
-    prodSubtitle: 'Clinically-balanced formula for radiance and protection',
+    prodTitle: 'Retinol 0.3% Serum - Éclat d\'or',
+    prodSubtitle: 'Advanced formula to fight wrinkles and renew skin',
     forUserTitle: 'Product Description',
     forUserPoints: [
-      '5% Vitamin C serum specially designed to brighten and even skin tone',
-      'Advanced formula combining pure L-Ascorbic Acid with Ferulic Acid and Vitamin E',
-      'Lightweight fast-absorbing texture, leaves no greasy or sticky feel',
-      'Suitable for all skin types including sensitive, paraben and fragrance free'
+      '0.3% Retinol serum specially designed to reduce wrinkles and fine lines',
+      'Encapsulated Retinol technology for slow release without irritation',
+      'Stimulates cell renewal, evens skin tone and minimizes pores',
+      'Enriched with Niacinamide and Hyaluronic Acid to soothe and prevent dryness'
     ],
     forDoctorTitle: 'Scientific Formula Reference',
-    forDoctorDesc: 'Balanced formula combining clinically proven L-Ascorbic Acid 5% with Ferulic Acid and Vitamin E to double efficacy and stability.',
+    forDoctorDesc: '0.3% Micro-encapsulated Retinol ensures gradual release for efficacy with 70% less irritation vs traditional retinol.',
     forDoctorPoints: [
-      'L-Ascorbic Acid 5%: Ideal concentration for daily use without irritation, stimulates collagen and lightens pigmentation',
-      'Ferulic Acid 0.5%: Multiplies vitamin C effectiveness and stability by 8x',
-      'Vitamin E 1%: Synergistic antioxidant that reduces inflammation',
-      'Hyaluronic Acid: Low molecular weight for deep penetration and preventing dryness'
+      'Encapsulated Retinol 0.3%: Converts to Retinoic Acid in skin, stimulates collagen and elastin',
+      'Niacinamide 5%: Strengthens skin barrier and reduces retinol-associated redness',
+      'Hyaluronic Acid: Compensates dryness and maintains hydration during exfoliation',
+      'Vitamin E: Antioxidant that protects retinol from oxidation and increases stability'
     ],
     howToUse: 'How to Use',
-    howToUseText: '4-5 drops on clean skin in the morning before sunscreen. For sensitive skin: start every other day',
-    proTip: 'Pro tip: Keep it in the fridge for enhanced stability and refreshing feel',
+    howToUseText: 'Evening only on clean dry skin. Start twice weekly and increase gradually. Sunscreen in morning is mandatory',
+    proTip: 'Pro tip: Use sandwich method - moisturizer before and after retinol for sensitive skin',
     ingredients: 'Active Ingredients',
-    activeIngredients: 'Vitamin C 5%, Ferulic Acid, Vitamin E, Hyaluronic Acid',
+    activeIngredients: 'Retinol 0.3%, Niacinamide 5%, Hyaluronic Acid, Vitamin E',
     orderBtn: 'Order via WhatsApp →',
     backToProducts: '← Back to all products'
   },
   tr: {
-    prodTitle: 'C Vitamini %5 Serum - Éclat d\'or',
-    prodSubtitle: 'Aydınlık ve koruma için klinik formül',
+    prodTitle: 'Retinol %0.3 Serum - Éclat d\'or',
+    prodSubtitle: 'Kırışıklıklarla savaş ve cilt yenileme için gelişmiş formül',
     forUserTitle: 'Ürün Açıklaması',
     forUserPoints: [
-      'Cildi aydınlatmak ve tonunu eşitlemek için özel tasarlanmış %5 C Vitamini serumu',
-      'Saf L-Askorbik Asit\'i Ferulik Asit ve E Vitamini ile birleştiren gelişmiş formül',
-      'Hızlı emilen hafif doku, yağlı veya yapışkan his bırakmaz',
-      'Hassas dahil tüm cilt tiplerine uygun, paraben ve parfüm içermez'
+      'Kırışıklık ve ince çizgileri azaltmak için özel %0.3 Retinol serumu',
+      'Tahriş olmadan yavaş salınım için Kapsüllenmiş Retinol teknolojisi',
+      'Hücre yenilenmesini uyarır, cilt tonunu eşitler ve gözenekleri küçültür',
+      'Niacinamide ve Hyaluronik Asit ile zenginleştirilmiş, yatıştırır ve kuruluğu önler'
     ],
     forDoctorTitle: 'Bilimsel Formül Referansı',
-    forDoctorDesc: 'Klinik olarak kanıtlanmış L-Askorbik Asit %5\'i, etkinlik ve stabiliteyi ikiye katlamak için Ferulik Asit ve E Vitamini ile birleştiren dengeli formül.',
+    forDoctorDesc: '%0.3 Mikro-kapsüllenmiş Retinol, geleneksel retinole göre %70 daha az tahrişle etkinlik için kademeli salınım sağlar.',
     forDoctorPoints: [
-      'L-Askorbik Asit %5: Tahriş olmadan günlük kullanım için ideal konsantrasyon, kolajen uyarır ve pigmentasyonu açar',
-      'Ferulik Asit %0.5: C vitamini etkinliğini ve stabilitesini 8 kat artırır',
-      'E Vitamini %1: Sinerjik antioksidan, iltihabı azaltır',
-      'Hyaluronik Asit: Derin nüfuz ve kuruluk önleme için düşük moleküler ağırlık'
+      'Kapsüllenmiş Retinol %0.3: Ciltte Retinoik Asit\'e dönüşür, kolajen ve elastini uyarır',
+      'Niacinamide %5: Cilt bariyerini güçlendirir ve retinole bağlı kızarıklığı azaltır',
+      'Hyaluronik Asit: Kuruluk telafi eder ve eksfoliasyon sırasında nemi korur',
+      'E Vitamini: Retinolü oksidasyondan koruyan ve stabiliteyi artıran antioksidan'
     ],
     howToUse: 'Nasıl Kullanılır',
-    howToUseText: 'Sabahları temiz cilde güneş kreminden önce 4-5 damla. Hassas ciltler: gün aşırı başlayın',
-    proTip: 'Uzman ipucu: Stabilite ve ferahlatıcı his için buzdolabında saklayın',
+    howToUseText: 'Sadece akşamları temiz kuru cilde. Haftada iki kez başlayın ve kademeli artırın. Sabah güneş kremi zorunlu',
+    proTip: 'Uzman ipucu: Hassas ciltler için sandviç yöntemi - retinolden önce ve sonra nemlendirici',
     ingredients: 'Aktif İçerikler',
-    activeIngredients: 'C Vitamini %5, Ferulik Asit, E Vitamini, Hyaluronik Asit',
+    activeIngredients: 'Retinol %0.3, Niacinamide %5, Hyaluronik Asit, E Vitamini',
     orderBtn: 'WhatsApp ile Sipariş Ver →',
     backToProducts: '← Tüm ürünlere dön'
   }
 }
 
-export default function VitaminCPage({ params }: { params: Promise<{ lang: string }> }) {
+export default function RetinolPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = use(params)
   const t = T[lang] || T.ar
   const isAr = lang === 'ar'
 
   const images = [
-    '/products/vitamin-c/1.png',
-    '/products/vitamin-c/2.png',
-    '/products/vitamin-c/3.png',
-    '/products/vitamin-c/4.png',
-    '/products/vitamin-c/5.png',
+    '/products/retinol/1.png',
+    '/products/retinol/2.png',
+    '/products/retinol/3.png',
+    '/products/retinol/4.png',
+    '/products/retinol/5.png',
+    '/products/retinol/6.png',
   ]
 
   const [activeImg, setActiveImg] = useState(0)
@@ -117,7 +118,7 @@ export default function VitaminCPage({ params }: { params: Promise<{ lang: strin
             <div style={{
               width:'100%',
               aspectRatio:'1/1',
-              background:'#FDFCF8',
+              background:'#E8E8E8',
               borderRadius:'24px',
               overflow:'hidden',
               display:'flex',
@@ -135,7 +136,7 @@ export default function VitaminCPage({ params }: { params: Promise<{ lang: strin
               ))}
             </div>
 
-            <a href="https://wa.me/905070000440?text=Vitamin C 5% Serum" target="_blank" style={{background:'#000', color:'#fff', padding:'16px 32px', borderRadius:'30px', textDecoration:'none', display:'block', textAlign:'center', fontSize:'16px', fontWeight:600}}>
+            <a href="https://wa.me/905070000440?text=Retinol 0.3% Serum" target="_blank" style={{background:'#000', color:'#fff', padding:'16px 32px', borderRadius:'30px', textDecoration:'none', display:'block', textAlign:'center', fontSize:'16px', fontWeight:600}}>
               {t.orderBtn}
             </a>
           </div>
@@ -150,7 +151,7 @@ export default function VitaminCPage({ params }: { params: Promise<{ lang: strin
               <p style={{margin:0, fontSize:'13px', opacity:0.7}}>{t.activeIngredients}</p>
             </div>
 
-            {/* وصف المنتج - هون حطيتو جنب الصورة */}
+            {/* وصف المنتج - جنب الصورة */}
             <div style={{background:'#FAF9F7', borderRadius:'16px', padding:'24px', marginBottom:'24px'}}>
               <h2 style={{fontSize:'18px', marginBottom:'16px', fontWeight:600}}>{t.forUserTitle}</h2>
               <div style={{display:'grid', gap:'12px'}}>
