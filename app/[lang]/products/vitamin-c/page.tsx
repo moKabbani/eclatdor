@@ -85,7 +85,7 @@ const T: any = {
 }
 
 export default function VitaminCPage({ params }: { params: Promise<{ lang: string }> }) {
-  const { lang } = use(params) // هاد السطر حل مشكلة اللغة
+  const { lang } = use(params)
   const t = T[lang] || T.ar
   const isAr = lang === 'ar'
 
@@ -101,97 +101,92 @@ export default function VitaminCPage({ params }: { params: Promise<{ lang: strin
 
   return (
     <main dir={isAr?'rtl':'ltr'} style={{background:'#fff', padding:'60px 20px'}}>
-      <style>{`
-   .product-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 60px;
-          max-width: 1200px;
-          margin: 0 auto 80px;
-        }
-        @media (max-width: 768px) {
-     .product-grid {
-            grid-template-columns: 1fr;
-            gap: 40px;
-          }
-        }
-      `}</style>
+      <div style={{maxWidth:'1200px', margin:'0 auto'}}>
 
-      <div className="product-grid">
+        {/* الصف الاول: الصورة + كل الكلام الاساسي */}
+        <div style={{
+          display:'grid',
+          gridTemplateColumns: isAr? '1fr 1.2fr' : '1.2fr 1fr',
+          gap:'40px',
+          marginBottom:'60px',
+          alignItems:'start'
+        }}>
 
-        {/* الصور + زر الواتساب - رح يطلع يمين بالعربي */}
-        <div style={{order: isAr? 1 : 2}}>
-          <div style={{
-            width:'100%',
-            aspectRatio:'1/1',
-            maxHeight:'500px',
-            background:'#FDFCF8',
-            borderRadius:'24px',
-            overflow:'hidden',
-            display:'flex',
-            alignItems:'center',
-            justifyContent:'center',
-            marginBottom:'20px'
-          }}>
-            <img src={images[activeImg]} alt={t.prodTitle} style={{width:'100%', height:'100%', objectFit:'contain'}} />
+          {/* الصور + زر الواتساب - يمين بالعربي */}
+          <div style={{order: isAr? 1 : 2}}>
+            <div style={{
+              width:'100%',
+              aspectRatio:'1/1',
+              background:'#FDFCF8',
+              borderRadius:'24px',
+              overflow:'hidden',
+              display:'flex',
+              alignItems:'center',
+              justifyContent:'center',
+              marginBottom:'20px'
+            }}>
+              <img src={images[activeImg]} alt={t.prodTitle} style={{width:'100%', height:'100%', objectFit:'contain'}} />
+            </div>
+            <div style={{display:'flex', gap:'12px', overflowX:'auto', paddingBottom:'10px', marginBottom:'20px'}}>
+              {images.map((img,i)=>(
+                <button key={i} onClick={()=>setActiveImg(i)} style={{width:'80px', height:'80px', borderRadius:'12px', overflow:'hidden', border: activeImg===i?'2px solid #000':'1px solid #ddd', padding:0, cursor:'pointer', opacity: activeImg===i?1:0.6, background:'#fff', flexShrink:0}}>
+                  <img src={img} style={{width:'100%', height:'100%', objectFit:'cover'}} />
+                </button>
+              ))}
+            </div>
+
+            <a href="https://wa.me/905070000440?text=Vitamin C 5% Serum" target="_blank" style={{background:'#000', color:'#fff', padding:'16px 32px', borderRadius:'30px', textDecoration:'none', display:'block', textAlign:'center', fontSize:'16px', fontWeight:600}}>
+              {t.orderBtn}
+            </a>
           </div>
-          <div style={{display:'flex', gap:'12px', overflowX:'auto', paddingBottom:'10px', marginBottom:'20px'}}>
-            {images.map((img,i)=>(
-              <button key={i} onClick={()=>setActiveImg(i)} style={{width:'80px', height:'80px', borderRadius:'12px', overflow:'hidden', border: activeImg===i?'2px solid #000':'1px solid #ddd', padding:0, cursor:'pointer', opacity: activeImg===i?1:0.6, background:'#fff', flexShrink:0}}>
-                <img src={img} style={{width:'100%', height:'100%', objectFit:'cover'}} />
-              </button>
+
+          {/* التفاصيل + وصف المنتج - شمال بالعربي */}
+          <div style={{order: isAr? 2 : 1}}>
+            <h1 style={{fontSize:'28px', marginBottom:'8px', fontWeight:700, lineHeight:'1.3'}}>{t.prodTitle}</h1>
+            <p style={{fontSize:'14px', opacity:0.6, marginBottom:'24px'}}>{t.prodSubtitle}</p>
+
+            <div style={{border:'1px solid #eee', borderRadius:'16px', padding:'20px', marginBottom:'24px'}}>
+              <h3 style={{margin:'0 0 12px', fontSize:'15px'}}>{t.ingredients}</h3>
+              <p style={{margin:0, fontSize:'13px', opacity:0.7}}>{t.activeIngredients}</p>
+            </div>
+
+            {/* وصف المنتج - هون حطيتو جنب الصورة */}
+            <div style={{background:'#FAF9F7', borderRadius:'16px', padding:'24px', marginBottom:'24px'}}>
+              <h2 style={{fontSize:'18px', marginBottom:'16px', fontWeight:600}}>{t.forUserTitle}</h2>
+              <div style={{display:'grid', gap:'12px'}}>
+                {t.forUserPoints.map((point: string, i: number) => (
+                  <div key={i} style={{fontSize:'14px', lineHeight:'24px'}}>{point}</div>
+                ))}
+              </div>
+            </div>
+
+            <Link href={`/${lang}/products`} style={{display:'block', textAlign:'center', fontSize:'14px', color:'#000'}}>{t.backToProducts}</Link>
+          </div>
+        </div>
+
+        {/* الصف التاني: المرجع العلمي - full width */}
+        <section style={{marginBottom:'60px', padding:'0 20px'}}>
+          <h2 style={{fontSize:'22px', marginBottom:'12px'}}>{t.forDoctorTitle}</h2>
+          <p style={{fontSize:'14px', opacity:0.7, lineHeight:'24px', marginBottom:'24px'}}>{t.forDoctorDesc}</p>
+          <div style={{display:'grid', gap:'20px'}}>
+            {t.forDoctorPoints.map((point: string, i: number) => (
+              <div key={i} style={{borderLeft:isAr?'none':'3px solid #C9A86A', borderRight:isAr?'3px solid #C9A86A':'none', padding:isAr?'0 16px 0 0':'0 0 0 16px', fontSize:'13px', lineHeight:'22px'}}>
+                {point}
+              </div>
             ))}
           </div>
+        </section>
 
-          <a href="https://wa.me/905070000440?text=Vitamin C 5% Serum" target="_blank" style={{background:'#000', color:'#fff', padding:'16px 32px', borderRadius:'30px', textDecoration:'none', display:'block', textAlign:'center', fontSize:'16px', fontWeight:600}}>
-            {t.orderBtn}
-          </a>
-        </div>
-
-        {/* التفاصيل - رح يطلع شمال بالعربي */}
-        <div style={{order: isAr? 2 : 1}}>
-          <h1 style={{fontSize:'28px', marginBottom:'8px', fontWeight:700, lineHeight:'1.3'}}>{t.prodTitle}</h1>
-          <p style={{fontSize:'14px', opacity:0.6, marginBottom:'24px'}}>{t.prodSubtitle}</p>
-
-          <div style={{border:'1px solid #eee', borderRadius:'16px', padding:'20px', marginBottom:'24px'}}>
-            <h3 style={{margin:'0 0 12px', fontSize:'15px'}}>{t.ingredients}</h3>
-            <p style={{margin:0, fontSize:'13px', opacity:0.7}}>{t.activeIngredients}</p>
+        {/* الصف التالت: طريقة الاستخدام - full width */}
+        <section style={{background:'#111', color:'#fff', borderRadius:'24px', padding:'30px 20px'}}>
+          <h2 style={{fontSize:'22px', marginBottom:'16px'}}>{t.howToUse}</h2>
+          <p style={{fontSize:'14px', lineHeight:'24px', opacity:0.9, marginBottom:'16px'}}>{t.howToUseText}</p>
+          <div style={{background:'rgba(201,168,106,0.15)', border:'1px solid #C9A86A', borderRadius:'12px', padding:'16px', fontSize:'13px'}}>
+            💡 {t.proTip}
           </div>
+        </section>
 
-          <Link href={`/${lang}/products`} style={{display:'block', textAlign:'center', marginTop:'24px', fontSize:'14px', color:'#000'}}>{t.backToProducts}</Link>
-        </div>
       </div>
-
-      {/* باقي الشرح */}
-      <section style={{maxWidth:'900px', margin:'0 auto 60px', background:'#FAF9F7', borderRadius:'24px', padding:'30px 20px'}}>
-        <h2 style={{fontSize:'22px', marginBottom:'20px'}}>{t.forUserTitle}</h2>
-        <div style={{display:'grid', gap:'16px'}}>
-          {t.forUserPoints.map((point: string, i: number) => (
-            <div key={i} style={{fontSize:'14px', lineHeight:'24px'}}>{point}</div>
-          ))}
-        </div>
-      </section>
-
-      <section style={{maxWidth:'900px', margin:'0 auto 60px', padding:'0 20px'}}>
-        <h2 style={{fontSize:'22px', marginBottom:'12px'}}>{t.forDoctorTitle}</h2>
-        <p style={{fontSize:'14px', opacity:0.7, lineHeight:'24px', marginBottom:'24px'}}>{t.forDoctorDesc}</p>
-        <div style={{display:'grid', gap:'20px'}}>
-          {t.forDoctorPoints.map((point: string, i: number) => (
-            <div key={i} style={{borderLeft:isAr?'none':'3px solid #C9A86A', borderRight:isAr?'3px solid #C9A86A':'none', padding:isAr?'0 16px 0 0':'0 0 0 16px', fontSize:'13px', lineHeight:'22px'}}>
-              {point}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section style={{maxWidth:'900px', margin:'0 auto', background:'#111', color:'#fff', borderRadius:'24px', padding:'30px 20px'}}>
-        <h2 style={{fontSize:'22px', marginBottom:'16px'}}>{t.howToUse}</h2>
-        <p style={{fontSize:'14px', lineHeight:'24px', opacity:0.9, marginBottom:'16px'}}>{t.howToUseText}</p>
-        <div style={{background:'rgba(201,168,106,0.15)', border:'1px solid #C9A86A', borderRadius:'12px', padding:'16px', fontSize:'13px'}}>
-          💡 {t.proTip}
-        </div>
-      </section>
-
     </main>
   )
 }
