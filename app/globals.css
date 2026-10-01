@@ -726,6 +726,28 @@ p {
   border-radius: 22px;
   padding: clamp(1.25rem, 3vw, 2rem);
 }
+.stockist-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 20rem;
+  border-color: transparent;
+  color: #fff;
+}
+.stockist-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to bottom, rgb(0 0 0 / 0.6), rgb(0 0 0 / 0.15) 45%, rgb(0 0 0 / 0.7));
+}
+.stockist-img {
+  z-index: -2;
+  object-fit: cover;
+}
+.stockist-card .muted {
+  color: rgb(255 255 255 / 0.85);
+}
 .panel-ink {
   background: var(--btn-bg);
   color: var(--btn-fg);
