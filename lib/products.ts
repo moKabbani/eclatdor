@@ -87,12 +87,12 @@ export function getCopy(slug: string, lang: Locale): ProductCopy {
 
 /** Blog / care-guide articles shown on the home page and /blog. */
 export const articles = [
-  { slug: 'morning-routine', key: 'a1', cover: '/products/background/3.jpg' },
-  { slug: 'night-routine', key: 'a2', cover: '/products/background/5.jpg' },
-  { slug: 'acne-treatment', key: 'a3', cover: '/products/background/2.jpg' },
-  { slug: 'melasma-treatment', key: 'a4', cover: '/products/background/4.jpg' },
-  { slug: 'sensitive-skin', key: 'a5', cover: '/products/background/3.jpg' },
-  { slug: 'how-to-use', key: 'a6', cover: '/products/background/5.jpg' },
+  { slug: 'morning-routine', key: 'a1', cover: '/blog/morning-routine.jpg' },
+  { slug: 'night-routine', key: 'a2', cover: '/blog/night-routine.jpg' },
+  { slug: 'acne-treatment', key: 'a3', cover: '/blog/acne-treatment.jpg' },
+  { slug: 'melasma-treatment', key: 'a4', cover: '/blog/melasma-treatment.jpg' },
+  { slug: 'sensitive-skin', key: 'a5', cover: '/blog/sensitive-skin.jpg' },
+  { slug: 'how-to-use', key: 'a6', cover: '/blog/how-to-use.jpg' },
 ] as const
 
 export type ArticleKey = (typeof articles)[number]['key']
