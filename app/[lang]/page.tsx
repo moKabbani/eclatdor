@@ -7,7 +7,7 @@ import InstagramFeed from '@/components/InstagramFeed'
 import SoonPhoto from '@/components/SoonPhoto'
 import { ArrowIcon } from '@/components/icons'
 import { getDict } from '@/lib/dict'
-import { articles } from '@/lib/products'
+import { articles, getProduct } from '@/lib/products'
 import { resolveLang, type LangParams } from '@/lib/params'
 import { pageMetadata } from '@/lib/seo'
 import { waLink } from '@/lib/site'
@@ -20,6 +20,7 @@ export async function generateMetadata({ params }: LangParams): Promise<Metadata
 export default async function Home({ params }: LangParams) {
   const lang = await resolveLang(params)
   const d = getDict(lang)
+  const heroPosters = ['brightening', 'hyaluronic'].map((slug) => getProduct(slug)!)
   const soon = [
     { name: d.home.cs1, file: 'collagen.png', remote: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&q=80' },
     { name: d.home.cs2, file: 'brightening.png', remote: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&q=80' },
@@ -53,13 +54,23 @@ export default async function Home({ params }: LangParams) {
             </Link>
           </div>
 
-          <div className="hero-posters" aria-hidden="true">
-            <div className="hero-poster hero-poster-main">
-              <Image src="/products/hyaluronic/1.png" alt="" fill sizes="(min-width: 800px) 22vw, 0px" style={{ objectFit: 'cover' }} />
-            </div>
-            <div className="hero-poster hero-poster-second">
-              <Image src="/products/vitamin-c/1.png" alt="" fill sizes="(min-width: 800px) 14vw, 0px" style={{ objectFit: 'cover' }} />
-            </div>
+          <div className="hero-posters">
+            {heroPosters.map((p, i) => (
+              <Link
+                key={p.slug}
+                href={`/${lang}/products/${p.slug}`}
+                className={`hero-poster ${i === 0 ? 'hero-poster-main' : 'hero-poster-second'}`}
+              >
+                <Image
+                  src={`/hero/${p.slug}.jpg`}
+                  alt={p.name[lang]}
+                  fill
+                  sizes={i === 0 ? '(min-width: 800px) 22rem, 0px' : '(min-width: 800px) 13rem, 0px'}
+                  preload={i === 0}
+                  style={{ objectFit: 'cover' }}
+                />
+              </Link>
+            ))}
           </div>
         </div>
       </section>

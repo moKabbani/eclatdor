@@ -622,29 +622,65 @@ p {
 }
 .hero-posters {
   position: relative;
-  max-width: 24rem;
+  max-width: 27rem;
   margin-inline: auto;
   width: 100%;
   aspect-ratio: 4 / 5;
 }
 .hero-poster {
   position: absolute;
-  border-radius: 22px;
+  display: block;
+  aspect-ratio: 4 / 5;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: var(--shadow);
   background: var(--surface-2);
+  box-shadow: var(--shadow), 0 40px 70px -35px rgb(0 0 0 / 0.35);
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+  animation: poster-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+/* hairline edge so the light photos don't bleed into a light background */
+.hero-poster::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.06);
+  pointer-events: none;
+}
+.hero-poster img {
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.hero-poster:hover {
+  transform: translateY(-6px);
+}
+.hero-poster:hover img {
+  transform: scale(1.03);
+}
+.hero-poster:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
 }
 .hero-poster-main {
-  inset-block: 0;
+  top: 0;
   inset-inline-start: 0;
-  width: 78%;
+  width: 82%;
 }
 .hero-poster-second {
-  width: 52%;
+  bottom: 0;
   inset-inline-end: 0;
-  bottom: -6%;
-  aspect-ratio: 4 / 5;
-  border: 5px solid var(--bg);
+  width: 50%;
+  border: 6px solid var(--bg);
+  animation-delay: 0.15s;
+}
+@keyframes poster-in {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
 }
 @media (max-width: 799px) {
   .hero-posters {
