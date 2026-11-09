@@ -130,7 +130,8 @@ export type Dict = {
   stockists: {
     title: string
     sub: string
-    pts: string
+    soon: string
+    close: string
     ctaTitle: string
     ctaText: string
     inquiry: string
@@ -317,8 +318,9 @@ const dict: Record<Locale, Dict> = {
     },
     stockists: {
       title: 'Where to find us',
-      sub: '{c} countries, {p}+ points of sale and growing.',
-      pts: 'points of sale',
+      sub: '{c} countries and growing.',
+      soon: 'Phone number coming soon',
+      close: 'Close',
       ctaTitle: "Want to stock Éclat d'or?",
       ctaText: "We're always open to new pharmacy, clinic and retail partners.",
       inquiry: "I'd like to become a stockist of Éclat d'or.",
@@ -503,8 +505,9 @@ const dict: Record<Locale, Dict> = {
     },
     stockists: {
       title: 'أين تجدوننا',
-      sub: '{c} دولة، وأكثر من {p} نقطة بيع وفي تزايد مستمر.',
-      pts: 'نقطة بيع',
+      sub: '{c} دولة وفي تزايد مستمر.',
+      soon: 'رقم الهاتف قريباً',
+      close: 'إغلاق',
       ctaTitle: 'تريدون بيع منتجات إكلات دور؟',
       ctaText: 'نرحب دائماً بشركاء جدد من الصيدليات والعيادات ومتاجر التجزئة.',
       inquiry: 'أرغب في أن أصبح نقطة بيع لمنتجات إكلات دور.',
@@ -690,8 +693,9 @@ const dict: Record<Locale, Dict> = {
     },
     stockists: {
       title: 'Bizi nerede bulabilirsiniz',
-      sub: '{c} ülke, {p}+ satış noktası ve artmaya devam ediyor.',
-      pts: 'satış noktası',
+      sub: '{c} ülke ve artmaya devam ediyor.',
+      soon: 'Telefon numarası yakında',
+      close: 'Kapat',
       ctaTitle: "Éclat d'or satmak ister misiniz?",
       ctaText: 'Yeni eczane, klinik ve perakende ortaklarına her zaman açığız.',
       inquiry: "Éclat d'or satış noktası olmak istiyorum.",
@@ -876,8 +880,9 @@ const dict: Record<Locale, Dict> = {
     },
     stockists: {
       title: 'Dónde encontrarnos',
-      sub: '{c} países, más de {p} puntos de venta y en crecimiento.',
-      pts: 'puntos de venta',
+      sub: '{c} países y en crecimiento.',
+      soon: 'Número de teléfono próximamente',
+      close: 'Cerrar',
       ctaTitle: '¿Quieres vender Éclat d\'or?',
       ctaText: 'Siempre estamos abiertos a nuevos socios de farmacias, clínicas y minoristas.',
       inquiry: "Me gustaría convertirme en punto de venta de Éclat d'or.",
@@ -1062,8 +1067,9 @@ const dict: Record<Locale, Dict> = {
     },
     stockists: {
       title: 'Где нас найти',
-      sub: '{c} стран, более {p} точек продаж, и это число растёт.',
-      pts: 'точек продаж',
+      sub: '{c} стран, и это число растёт.',
+      soon: 'Номер телефона скоро появится',
+      close: 'Закрыть',
       ctaTitle: "Хотите продавать Éclat d'or?",
       ctaText: 'Мы всегда открыты для новых партнёров среди аптек, клиник и розничных магазинов.',
       inquiry: "Я хотел(а) бы стать точкой продаж Éclat d'or.",
