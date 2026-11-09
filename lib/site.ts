@@ -4,8 +4,8 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.eclatdor.me',
   instagram: 'eclatdor',
   email: 'info@eclatdor.me',
-  phoneDisplay: '+90 212 555 01 23',
-  phoneDigits: '902125550123',
+  phoneDisplay: '+90 507 000 0440',
+  phoneDigits: '905070000440',
   addressLines: ['Maslak Mahallesi, Büyükdere Caddesi No:1', 'Sarıyer, İstanbul, Türkiye'],
 }
 
