@@ -108,6 +108,12 @@ export const DownloadIcon = (p: P) => (
     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
   </svg>
 )
+export const EyeIcon = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z" />
+    <circle cx="12" cy="12" r="3" />
+  </svg>
+)
 export const InstagramIcon = (p: P) => (
   <svg {...base} {...p}>
     <rect x="3" y="3" width="18" height="18" rx="5" />

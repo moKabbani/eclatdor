@@ -69,9 +69,8 @@ export type Dict = {
     title: string
     text: string
     cover: string
+    view: string
     download: string
-    pending: string
-    request: string
   }
   products: {
     title: string
@@ -252,9 +251,8 @@ const dict: Record<Locale, Dict> = {
       title: 'Product catalog',
       text: 'Download our full catalog for detailed formulations, packaging options and ingredient lists.',
       cover: "Éclat d'or Catalog",
+      view: 'View catalog',
       download: 'Download PDF',
-      pending: "The catalog is being finalized. Request a copy and we'll send it directly.",
-      request: 'Request catalog',
     },
     products: {
       title: 'Our products',
@@ -439,9 +437,8 @@ const dict: Record<Locale, Dict> = {
       title: 'كتالوج المنتجات',
       text: 'حمّلوا الكتالوج الكامل للاطلاع على التركيبات التفصيلية وخيارات التغليف وقوائم المكونات.',
       cover: 'كتالوج إكلات دور',
+      view: 'عرض الكتالوج',
       download: 'تحميل PDF',
-      pending: 'الكتالوج قيد الإنجاز حالياً. اطلبوا نسخة وسنرسلها لكم مباشرة.',
-      request: 'طلب الكتالوج',
     },
     products: {
       title: 'منتجاتنا',
@@ -626,9 +623,8 @@ const dict: Record<Locale, Dict> = {
       title: 'Ürün kataloğu',
       text: 'Detaylı formülasyonlar, ambalaj seçenekleri ve içerik listeleri için tam kataloğumuzu indirin.',
       cover: "Éclat d'or Kataloğu",
+      view: 'Kataloğu görüntüle',
       download: 'PDF indir',
-      pending: 'Katalog son haline getiriliyor. Bir kopya talep edin, doğrudan size gönderelim.',
-      request: 'Katalog talep et',
     },
     products: {
       title: 'Ürünlerimiz',
@@ -814,9 +810,8 @@ const dict: Record<Locale, Dict> = {
       title: 'Catálogo de productos',
       text: 'Descarga nuestro catálogo completo con formulaciones detalladas, opciones de envase y listas de ingredientes.',
       cover: "Catálogo de Éclat d'or",
+      view: 'Ver catálogo',
       download: 'Descargar PDF',
-      pending: 'El catálogo se está finalizando. Solicita una copia y te la enviaremos directamente.',
-      request: 'Solicitar catálogo',
     },
     products: {
       title: 'Nuestros productos',
@@ -1001,9 +996,8 @@ const dict: Record<Locale, Dict> = {
       title: 'Каталог продукции',
       text: 'Скачайте полный каталог с подробными формулами, вариантами упаковки и списками ингредиентов.',
       cover: "Каталог Éclat d'or",
+      view: 'Смотреть каталог',
       download: 'Скачать PDF',
-      pending: 'Каталог находится в финальной доработке. Запросите копию, и мы отправим её напрямую.',
-      request: 'Запросить каталог',
     },
     products: {
       title: 'Наши продукты',

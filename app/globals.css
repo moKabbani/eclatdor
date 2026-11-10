@@ -688,6 +688,25 @@ p {
   }
 }
 
+/* ---------------------------- catalog ----------------------------- */
+.catalog-cover {
+  position: relative;
+  display: block;
+  aspect-ratio: 210 / 297; /* A4 */
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow), 0 40px 70px -35px rgb(0 0 0 / 0.35);
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.catalog-cover:hover {
+  transform: translateY(-6px);
+}
+.catalog-cover:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
 /* ------------------------- product tiles -------------------------- */
 .product-grid {
   display: grid;
