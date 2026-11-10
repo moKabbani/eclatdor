@@ -6,7 +6,7 @@ export const site = {
   email: 'info@eclatdor.me',
   phoneDisplay: '+90 507 000 0440',
   phoneDigits: '905070000440',
-  addressLines: ['Maslak Mahallesi, Büyükdere Caddesi No:1', 'Sarıyer, İstanbul, Türkiye'],
+  addressLines: ['Atatürk, Güner Sk. No:1', '34303 Küçükçekmece/İstanbul'],
 }
 
 export const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.addressLines.join(', '))}`
