@@ -28,7 +28,7 @@ export default function StockistCard({
         src={`/stockists/${code.toLowerCase()}.jpg`}
         alt=""
         fill
-        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
         className="stockist-img"
       />
       <span className="muted text-sm" dir="ltr">{code}</span>

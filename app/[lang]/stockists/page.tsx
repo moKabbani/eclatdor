@@ -21,7 +21,6 @@ const places: Place[] = [
   { code: 'MA', city: { en: 'Rabat', ar: 'الرباط', tr: 'Rabat', es: 'Rabat', ru: 'Рабат' } },
   { code: 'AE', city: { en: 'Dubai', ar: 'دبي', tr: 'Dubai', es: 'Dubái', ru: 'Дубай' } },
   { code: 'SA', city: { en: 'Riyadh', ar: 'الرياض', tr: 'Riyad', es: 'Riad', ru: 'Эр-Рияд' } },
-  { code: 'OM', city: { en: 'Muscat', ar: 'مسقط', tr: 'Maskat', es: 'Mascate', ru: 'Маскат' } },
   { code: 'SY', city: { en: 'Damascus', ar: 'دمشق', tr: 'Şam', es: 'Damasco', ru: 'Дамаск' } },
 ]
 
@@ -36,7 +35,7 @@ export default async function StockistsPage({ params }: LangParams) {
       <PageHeader title={s.title} text={fmt(s.sub, { c: places.length })} />
 
       <section className="wrap">
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {places.map((p) => (
             <StockistCard
               key={p.code}
