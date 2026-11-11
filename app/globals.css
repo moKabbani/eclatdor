@@ -692,10 +692,6 @@ p {
   }
 }
 
-/* ---------------------------- catalog ----------------------------- */
-.catalog-cover {
-  position: relative;
-  display: block;
 /* ---------------------------- articles ---------------------------- */
 .article-body {
   font-size: 1.075rem;
@@ -742,6 +738,10 @@ p {
   border-inline-start: 3px solid var(--taupe);
 }
 
+/* ---------------------------- catalog ----------------------------- */
+.catalog-cover {
+  position: relative;
+  display: block;
   aspect-ratio: 210 / 297; /* A4 */
   border-radius: 14px;
   overflow: hidden;
@@ -996,36 +996,39 @@ p {
   box-shadow: 0 0 0 3px color-mix(in oklab, var(--taupe) 35%, transparent);
 }
 
-/* ------------------------ instagram marquee ----------------------- */
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-.marquee {
+/* ------------------------- instagram strip ------------------------ */
+/* swipeable row of posts; first post lines up with the page content, the row bleeds to the screen edge */
+.ig-strip {
+  --gutter: max(clamp(1.1rem, 4vw, 2.5rem), (100% - 1200px) / 2 + clamp(1.1rem, 4vw, 2.5rem));
   direction: ltr;
-  overflow: hidden;
-}
-.marquee-track {
   display: flex;
   gap: 1rem;
-  width: max-content;
-  animation: marquee 60s linear infinite;
+  overflow-x: auto;
+  padding-inline: var(--gutter);
+  scroll-padding-inline: var(--gutter);
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
 }
-.marquee:hover .marquee-track,
-.marquee:focus-within .marquee-track {
-  animation-play-state: paused;
+.ig-strip::-webkit-scrollbar {
+  display: none;
 }
-@media (prefers-reduced-motion: reduce) {
-  .marquee {
-    overflow-x: auto;
-  }
-  .marquee-track {
-    animation: none;
-  }
+.ig-post {
+  flex: 0 0 clamp(10.5rem, 42vw, 15rem);
+  aspect-ratio: 4 / 5;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--surface-2);
+  scroll-snap-align: start;
+}
+.ig-post img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.ig-post:hover img {
+  transform: scale(1.04);
 }
 
 /* --------------------------- gallery ------------------------------ */

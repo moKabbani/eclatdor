@@ -1,16 +1,12 @@
-import fs from 'node:fs'
-import path from 'node:path'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import InstagramFeed from '@/components/InstagramFeed'
-import SoonPhoto from '@/components/SoonPhoto'
 import { ArrowIcon } from '@/components/icons'
 import { getDict } from '@/lib/dict'
 import { articles, getProduct } from '@/lib/products'
 import { resolveLang, type LangParams } from '@/lib/params'
 import { pageMetadata } from '@/lib/seo'
-import { waLink } from '@/lib/site'
 
 export async function generateMetadata({ params }: LangParams): Promise<Metadata> {
   const lang = await resolveLang(params)
@@ -21,14 +17,6 @@ export default async function Home({ params }: LangParams) {
   const lang = await resolveLang(params)
   const d = getDict(lang)
   const heroPosters = ['brightening', 'hyaluronic'].map((slug) => getProduct(slug)!)
-  const soon = [
-    { name: d.home.cs1, file: 'collagen.png', remote: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&q=80' },
-    { name: d.home.cs2, file: 'brightening.png', remote: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&q=80' },
-    { name: d.home.cs3, file: 'scrub.png', remote: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80' },
-  ].map((c) => ({
-    ...c,
-    hasLocal: fs.existsSync(path.join(process.cwd(), 'public', 'comingsoon', c.file)),
-  }))
   return (
     <>
       {/* ---- hero ---- */}
@@ -92,40 +80,7 @@ export default async function Home({ params }: LangParams) {
         </div>
       </section>
 
-      {/* ---- coming soon ---- */}
-      <section className="section" style={{ background: 'var(--surface)', borderBlock: '1px solid var(--line)' }}>
-        <div className="wrap">
-          <div className="max-w-xl">
-            <p className="accent mb-4 font-medium">{d.home.soonLabel}</p>
-            <h2 className="h-section">{d.home.soonTitle}</h2>
-            <p className="muted mt-3">{d.home.soonText}</p>
-          </div>
-          <div className="product-grid mt-10">
-            {soon.map((c) => (
-              <article key={c.file}>
-                <div className="tile">
-                  <span className="badge">{d.home.soonBadge}</span>
-                  <SoonPhoto alt={c.name} hasLocal={c.hasLocal} local={`/comingsoon/${c.file}`} remote={c.remote} />
-                </div>
-                <h3 className="h-card mt-4">{c.name}</h3>
-                <div className="mt-2 flex items-center justify-between gap-3">
-                  <span className="muted text-sm">{d.home.launching}</span>
-                  <a
-                    href={waLink(c.name)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-ghost btn-sm"
-                  >
-                    {d.home.notify}
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <InstagramFeed followText={d.home.follow} cta={d.home.follow} />
+      <InstagramFeed followText={d.home.follow} cta={d.home.follow} prevLabel={d.home.igPrev} nextLabel={d.home.igNext} />
 
       {/* ---- care guide ---- */}
       <section className="section wrap">

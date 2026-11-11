@@ -30,18 +30,11 @@ export type Dict = {
     introTitle: string
     introText: string
     viewAll: string
-    soonLabel: string
-    soonTitle: string
-    soonText: string
-    soonBadge: string
-    launching: string
-    notify: string
-    cs1: string
-    cs2: string
-    cs3: string
     guide: string
     guideAll: string
     follow: string
+    igPrev: string
+    igNext: string
   }
   about: {
     label: string
@@ -214,18 +207,11 @@ const dict: Record<Locale, Dict> = {
       introText:
         'We build each product around a small number of clinically proven actives at effective concentrations — no filler, no guesswork.',
       viewAll: 'View all products',
-      soonLabel: 'Coming soon',
-      soonTitle: 'New formulas in development',
-      soonText: "These treatments are in final testing and will launch shortly. Ask us for early access.",
-      soonBadge: 'Coming soon',
-      launching: 'Launching soon',
-      notify: 'Notify me',
-      cs1: 'Collagen Booster',
-      cs2: 'Brightening Ampoule',
-      cs3: 'Gentle Scrub',
       guide: 'Skin care guide',
       guideAll: 'View all articles',
       follow: 'Follow along',
+      igPrev: 'Previous posts',
+      igNext: 'Next posts',
     },
     about: {
       label: 'About us',
@@ -403,18 +389,11 @@ const dict: Record<Locale, Dict> = {
       introText:
         'نبني كل منتج حول عدد محدود من المكونات الفعّالة المثبتة سريرياً وبتركيزات فعّالة، دون حشو أو تخمين.',
       viewAll: 'عرض جميع المنتجات',
-      soonLabel: 'قريباً',
-      soonTitle: 'تركيبات جديدة قيد التطوير',
-      soonText: 'هذه المنتجات في مراحل الاختبار النهائية وستُطرح قريباً. تواصلوا معنا للحصول على أولوية التجربة.',
-      soonBadge: 'قريباً',
-      launching: 'الإطلاق قريباً',
-      notify: 'أعلموني',
-      cs1: 'معزز الكولاجين',
-      cs2: 'أمبولة التفتيح',
-      cs3: 'مقشر لطيف',
       guide: 'دليل العناية بالبشرة',
       guideAll: 'عرض جميع المقالات',
       follow: 'تابعونا',
+      igPrev: 'المنشورات السابقة',
+      igNext: 'المنشورات التالية',
     },
     about: {
       label: 'من نحن',
@@ -592,18 +571,11 @@ const dict: Record<Locale, Dict> = {
       introText:
         'Her ürünü, etkin konsantrasyonlarda, klinik olarak kanıtlanmış az sayıda etken madde etrafında tasarlıyoruz — dolgu madde yok, tahmin yok.',
       viewAll: 'Tüm ürünleri gör',
-      soonLabel: 'Yakında',
-      soonTitle: 'Geliştirilmekte olan yeni formüller',
-      soonText: 'Bu ürünler son test aşamasında ve yakında piyasaya çıkacak. Erken erişim için bize ulaşın.',
-      soonBadge: 'Yakında',
-      launching: 'Yakında piyasada',
-      notify: 'Bana haber ver',
-      cs1: 'Kolajen Takviyesi',
-      cs2: 'Aydınlatıcı Ampul',
-      cs3: 'Hafif Peeling',
       guide: 'Cilt bakım rehberi',
       guideAll: 'Tüm yazıları gör',
       follow: 'Bizi takip edin',
+      igPrev: 'Önceki gönderiler',
+      igNext: 'Sonraki gönderiler',
     },
     about: {
       label: 'Hakkımızda',
@@ -781,18 +753,11 @@ const dict: Record<Locale, Dict> = {
       introText:
         'Construimos cada producto en torno a un número reducido de activos clínicamente probados, en concentraciones eficaces — sin relleno ni conjeturas.',
       viewAll: 'Ver todos los productos',
-      soonLabel: 'Próximamente',
-      soonTitle: 'Nuevas fórmulas en desarrollo',
-      soonText: 'Estos tratamientos están en fase final de pruebas y se lanzarán pronto. Pregúntanos por el acceso anticipado.',
-      soonBadge: 'Próximamente',
-      launching: 'Lanzamiento próximo',
-      notify: 'Avísenme',
-      cs1: 'Impulsor de colágeno',
-      cs2: 'Ampolla iluminadora',
-      cs3: 'Exfoliante suave',
       guide: 'Guía de cuidado de la piel',
       guideAll: 'Ver todos los artículos',
       follow: 'Síguenos',
+      igPrev: 'Publicaciones anteriores',
+      igNext: 'Publicaciones siguientes',
     },
     about: {
       label: 'Sobre nosotros',
@@ -970,18 +935,11 @@ const dict: Record<Locale, Dict> = {
       introText:
         'Мы создаём каждый продукт вокруг небольшого числа клинически доказанных активных компонентов в эффективных концентрациях — без наполнителей и догадок.',
       viewAll: 'Смотреть все продукты',
-      soonLabel: 'Скоро',
-      soonTitle: 'Новые формулы в разработке',
-      soonText: 'Эти средства проходят финальное тестирование и скоро появятся в продаже. Спросите нас о раннем доступе.',
-      soonBadge: 'Скоро',
-      launching: 'Скоро в продаже',
-      notify: 'Сообщить мне',
-      cs1: 'Коллагеновый бустер',
-      cs2: 'Осветляющая ампула',
-      cs3: 'Мягкий скраб',
       guide: 'Гид по уходу за кожей',
       guideAll: 'Смотреть все статьи',
       follow: 'Подписывайтесь',
+      igPrev: 'Предыдущие публикации',
+      igNext: 'Следующие публикации',
     },
     about: {
       label: 'О нас',
