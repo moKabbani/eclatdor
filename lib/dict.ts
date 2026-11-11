@@ -89,8 +89,12 @@ export type Dict = {
     title: string
     sub: string
     minRead: string
-    soonTitle: string
-    soonText: string
+    readTime: string
+    summary: string
+    inGuide: string
+    note: string
+    askTitle: string
+    askText: string
   }
   certs: {
     title: string
@@ -271,8 +275,12 @@ const dict: Record<Locale, Dict> = {
       title: 'Skin care guide',
       sub: 'Practical routines and advice from our formulation team.',
       minRead: 'Care guide',
-      soonTitle: 'Full article coming soon',
-      soonText: "We're writing this guide now. In the meantime, explore our products or reach out with questions.",
+      readTime: '{n} min read',
+      summary: 'The short version',
+      inGuide: 'Products in this guide',
+      note: 'This guide is general information, not medical advice. If you have a skin condition, are pregnant or breastfeeding, or a product causes lasting irritation, talk to a dermatologist or your doctor.',
+      askTitle: 'Not sure what fits your skin?',
+      askText: 'Tell us about your skin and your current routine, and our team will suggest where to start.',
       a1: 'Building a morning routine that works',
       a2: 'The night routine actives really need',
       a3: 'A practical approach to acne-prone skin',
@@ -457,8 +465,12 @@ const dict: Record<Locale, Dict> = {
       title: 'دليل العناية بالبشرة',
       sub: 'روتينات عملية ونصائح من فريق التركيبات لدينا.',
       minRead: 'دليل العناية',
-      soonTitle: 'المقال الكامل قريباً',
-      soonText: 'نعمل حالياً على كتابة هذا الدليل. في غضون ذلك، استكشفوا منتجاتنا أو تواصلوا معنا لأي استفسار.',
+      readTime: 'قراءة {n} دقائق',
+      summary: 'الخلاصة',
+      inGuide: 'المنتجات المذكورة في هذا الدليل',
+      note: 'هذا الدليل للمعلومات العامة ولا يُعدّ استشارة طبية. إذا كانت لديكم حالة جلدية، أو في حالة الحمل أو الرضاعة، أو إذا سبّب لكم أي منتج تهيّجاً مستمراً، فاستشيروا طبيب الجلدية أو طبيبكم.',
+      askTitle: 'لستم متأكدين مما يناسب بشرتكم؟',
+      askText: 'أخبرونا عن بشرتكم وروتينكم الحالي، وسيقترح فريقنا من أين تبدؤون.',
       a1: 'بناء روتين صباحي فعّال',
       a2: 'المكونات التي يحتاجها روتينكم المسائي فعلاً',
       a3: 'نهج عملي للبشرة المعرضة لحب الشباب',
@@ -643,9 +655,12 @@ const dict: Record<Locale, Dict> = {
       title: 'Cilt bakım rehberi',
       sub: 'Formülasyon ekibimizden pratik rutinler ve öneriler.',
       minRead: 'Bakım rehberi',
-      soonTitle: 'Yazının tamamı yakında',
-      soonText:
-        'Bu rehberi şu anda yazıyoruz. Bu arada ürünlerimizi inceleyebilir veya sorularınızla bize ulaşabilirsiniz.',
+      readTime: '{n} dk okuma',
+      summary: 'Kısaca',
+      inGuide: 'Bu rehberdeki ürünler',
+      note: 'Bu rehber genel bilgi amaçlıdır, tıbbi tavsiye değildir. Bir cilt rahatsızlığınız varsa, hamileyseniz veya emziriyorsanız ya da bir ürün kalıcı tahrişe yol açıyorsa bir dermatoloğa veya doktorunuza danışın.',
+      askTitle: 'Cildinize neyin uygun olduğundan emin değil misiniz?',
+      askText: 'Bize cildinizden ve mevcut rutininizden bahsedin; ekibimiz nereden başlamanız gerektiğini önersin.',
       a1: 'İşe yarayan bir sabah rutini oluşturmak',
       a2: 'Gece rutininizin gerçekten ihtiyaç duyduğu etkenler',
       a3: 'Akne eğilimli ciltler için pratik bir yaklaşım',
@@ -830,8 +845,12 @@ const dict: Record<Locale, Dict> = {
       title: 'Guía de cuidado de la piel',
       sub: 'Rutinas prácticas y consejos de nuestro equipo de formulación.',
       minRead: 'Guía de cuidado',
-      soonTitle: 'Artículo completo próximamente',
-      soonText: 'Estamos redactando esta guía. Mientras tanto, explora nuestros productos o contáctanos con tus preguntas.',
+      readTime: '{n} min de lectura',
+      summary: 'En resumen',
+      inGuide: 'Productos de esta guía',
+      note: 'Esta guía es información general, no consejo médico. Si tienes una afección de la piel, estás embarazada o en periodo de lactancia, o un producto te causa irritación persistente, consulta a un dermatólogo o a tu médico.',
+      askTitle: '¿No sabes qué le conviene a tu piel?',
+      askText: 'Cuéntanos cómo es tu piel y tu rutina actual, y nuestro equipo te sugerirá por dónde empezar.',
       a1: 'Cómo crear una rutina matutina eficaz',
       a2: 'Los activos que tu rutina nocturna realmente necesita',
       a3: 'Un enfoque práctico para la piel con tendencia acnéica',
@@ -1016,8 +1035,12 @@ const dict: Record<Locale, Dict> = {
       title: 'Гид по уходу за кожей',
       sub: 'Практичные рутины и советы от нашей команды разработчиков формул.',
       minRead: 'Гид по уходу',
-      soonTitle: 'Полная статья скоро',
-      soonText: 'Мы сейчас пишем этот гид. А пока — изучите наши продукты или свяжитесь с нами по любым вопросам.',
+      readTime: '{n} мин чтения',
+      summary: 'Коротко',
+      inGuide: 'Средства из этого гида',
+      note: 'Этот гид носит общий информационный характер и не является медицинской консультацией. Если у вас кожное заболевание, вы беременны или кормите грудью или средство вызывает стойкое раздражение, обратитесь к дерматологу или врачу.',
+      askTitle: 'Не уверены, что подойдёт вашей коже?',
+      askText: 'Расскажите нам о своей коже и нынешнем уходе — наша команда подскажет, с чего начать.',
       a1: 'Как построить работающий утренний уход',
       a2: 'Активные компоненты, которые действительно нужны вечернему уходу',
       a3: 'Практичный подход к коже, склонной к акне',

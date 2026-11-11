@@ -85,14 +85,15 @@ export function getCopy(slug: string, lang: Locale): ProductCopy {
   return productCopy[slug][lang]
 }
 
-/** Blog / care-guide articles shown on the home page and /blog. */
+/** Blog / care-guide articles shown on the home page and /blog. Text lives in lib/articles; `products` are featured at the end. */
 export const articles = [
-  { slug: 'morning-routine', key: 'a1', cover: '/blog/morning-routine.jpg' },
-  { slug: 'night-routine', key: 'a2', cover: '/blog/night-routine.jpg' },
-  { slug: 'acne-treatment', key: 'a3', cover: '/blog/acne-treatment.jpg' },
-  { slug: 'melasma-treatment', key: 'a4', cover: '/blog/melasma-treatment.jpg' },
-  { slug: 'sensitive-skin', key: 'a5', cover: '/blog/sensitive-skin.jpg' },
-  { slug: 'how-to-use', key: 'a6', cover: '/blog/how-to-use.jpg' },
+  { slug: 'morning-routine', key: 'a1', cover: '/blog/morning-routine.jpg', products: ['vitamin-c', 'hyaluronic', 'sunscreen', 'cleanser'] },
+  { slug: 'night-routine', key: 'a2', cover: '/blog/night-routine.jpg', products: ['retinol', 'salicylic', 'niacinamide', 'cell-renewal'] },
+  { slug: 'acne-treatment', key: 'a3', cover: '/blog/acne-treatment.jpg', products: ['salicylic', 'niacinamide', 'cleanser', 'sunscreen'] },
+  { slug: 'melasma-treatment', key: 'a4', cover: '/blog/melasma-treatment.jpg', products: ['sunscreen', 'brightening', 'vitamin-c', 'niacinamide'] },
+  { slug: 'sensitive-skin', key: 'a5', cover: '/blog/sensitive-skin.jpg', products: ['cleanser', 'hyaluronic', 'moisturizer', 'sunscreen'] },
+  { slug: 'how-to-use', key: 'a6', cover: '/blog/how-to-use.jpg', products: ['vitamin-c', 'retinol', 'salicylic', 'niacinamide'] },
 ] as const
 
 export type ArticleKey = (typeof articles)[number]['key']
+export type ArticleSlug = (typeof articles)[number]['slug']
