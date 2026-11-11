@@ -2,7 +2,7 @@
 export const site = {
   name: "Éclat d'or",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.eclatdor.me',
-  instagram: 'eclatdor',
+  instagram: 'eclatdor.me',
   email: 'info@eclatdor.me',
   phoneDisplay: '+90 507 000 0440',
   phoneDigits: '905070000440',
