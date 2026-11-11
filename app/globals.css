@@ -1030,6 +1030,18 @@ p {
 .ig-post:hover img {
   transform: scale(1.04);
 }
+/* desktop: row is centered — short lists sit in the middle, long lists snap posts to the center */
+@media (min-width: 768px) {
+  .ig-post {
+    scroll-snap-align: center;
+  }
+  .ig-post:first-child {
+    margin-inline-start: auto;
+  }
+  .ig-post:last-child {
+    margin-inline-end: auto;
+  }
+}
 
 /* --------------------------- gallery ------------------------------ */
 .thumbs {

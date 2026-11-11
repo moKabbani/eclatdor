@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { site } from '@/lib/site'
 import { ArrowIcon, InstagramIcon } from './icons'
 
@@ -39,6 +39,35 @@ export default function InstagramFeed({
       cancelled = true
     }
   }, [])
+
+  // Desktop, more posts than fit: render them three times so the row scrolls endlessly both ways.
+  const [loop, setLoop] = useState(false)
+  const settle = useRef<number | undefined>(undefined)
+
+  // Desktop: open with the middle post (of the middle copy when looping) centered.
+  useLayoutEffect(() => {
+    const el = strip.current
+    if (!el || posts.length === 0 || !window.matchMedia('(min-width: 768px)').matches) return
+    if (!loop && el.scrollWidth > el.clientWidth) return setLoop(true)
+    const mid = el.children[(loop ? posts.length : 0) + Math.floor((posts.length - 1) / 2)].getBoundingClientRect()
+    const box = el.getBoundingClientRect()
+    el.scrollLeft += mid.left + mid.width / 2 - (box.left + box.width / 2)
+  }, [posts, loop])
+
+  // When scrolling stops, jump back into the middle copy (identical content, so the jump is invisible).
+  const onScroll = () => {
+    if (!loop) return
+    clearTimeout(settle.current)
+    settle.current = window.setTimeout(() => {
+      const el = strip.current
+      if (!el) return
+      const set = (el.children[posts.length] as HTMLElement).offsetLeft - (el.children[0] as HTMLElement).offsetLeft
+      if (el.scrollLeft < set * 0.5) el.scrollLeft += set
+      else if (el.scrollLeft > set * 1.5) el.scrollLeft -= set
+    }, 150)
+  }
+
+  const shown = loop ? [...posts, ...posts, ...posts] : posts
 
   // Nothing to show (not configured, or Instagram is unreachable): hide the whole section.
   if (posts.length === 0) return null
@@ -80,9 +109,16 @@ export default function InstagramFeed({
           </a>
         </div>
       </div>
-      <div ref={strip} className="ig-strip">
-        {posts.map((p) => (
-          <a key={p.id} href={p.permalink} target="_blank" rel="noopener noreferrer" className="ig-post">
+      <div ref={strip} className="ig-strip" onScroll={onScroll}>
+        {shown.map((p, i) => (
+          <a
+            key={`${i}-${p.id}`}
+            href={p.permalink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ig-post"
+            {...(loop && (i < posts.length || i >= posts.length * 2) && { 'aria-hidden': true, tabIndex: -1 })}
+          >
             {/* eslint-disable-next-line @next/next/no-img-element -- Instagram CDN hosts change often */}
             <img src={(p.media_type === 'VIDEO' ? p.thumbnail_url : p.media_url) as string} alt="" loading="lazy" />
           </a>
