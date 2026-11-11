@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const lang = await resolveLang(params)
   const product = getProduct(slug)
   if (!product) return {}
-  return pageMetadata(lang, `/products/${slug}`, product.name[lang], getCopy(slug, lang).subtitle)
+  return pageMetadata(lang, `/products/${slug}`, product.name[lang], getCopy(slug, lang).subtitle, product.images[0])
 }
 
 export default async function ProductPage({ params }: Props) {

@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const lang = await resolveLang(params)
   const article = articles.find((a) => a.slug === slug)
   if (!article) return {}
-  return pageMetadata(lang, `/blog/${slug}`, getDict(lang).blog[article.key], getArticleCopy(article.slug, lang).intro)
+  return pageMetadata(lang, `/blog/${slug}`, getDict(lang).blog[article.key], getArticleCopy(article.slug, lang).intro, article.cover)
 }
 
 /** Turns `[[product-slug]]` into a product link and `**text**` into bold. */
