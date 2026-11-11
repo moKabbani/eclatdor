@@ -531,6 +531,10 @@ p {
   color: var(--ink);
   text-decoration: none;
   opacity: 0.85;
+  /* bigger tap area on phones without changing the layout */
+  display: inline-block;
+  padding-block: 0.75rem;
+  margin-block: -0.75rem;
 }
 .footer-links a:hover {
   opacity: 1;
@@ -758,6 +762,22 @@ p {
   display: grid;
   gap: clamp(1.25rem, 3vw, 2rem);
   grid-template-columns: repeat(auto-fill, minmax(min(15rem, 100%), 1fr));
+}
+/* two products per row on phones, so the list isn't one screen-tall card at a time
+   (article grids set their columns inline and keep one card per row) */
+@media (max-width: 639px) {
+  .product-grid:not([style]) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem 0.875rem;
+  }
+  .product-grid:not([style]) .h-card {
+    font-size: 1.15rem;
+  }
+  .product-grid:not([style]) .badge {
+    top: 0.5rem;
+    inset-inline-start: 0.5rem;
+    padding: 0.2rem 0.55rem;
+  }
 }
 .tile {
   position: relative;

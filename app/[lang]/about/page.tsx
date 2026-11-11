@@ -5,6 +5,7 @@ import { getDict } from '@/lib/dict'
 import { resolveLang, type LangParams } from '@/lib/params'
 import { pageMetadata } from '@/lib/seo'
 import { waLink } from '@/lib/site'
+import { places } from '@/lib/stockists'
 
 export async function generateMetadata({ params }: LangParams): Promise<Metadata> {
   const lang = await resolveLang(params)
@@ -32,9 +33,8 @@ export default async function AboutPage({ params }: LangParams) {
       </section>
 
       <section className="wrap">
-        <div className="grid gap-4 sm:grid-cols-3">
-          <div className="stat"><b dir="ltr">107+</b><span>{a.points}</span></div>
-          <div className="stat"><b>8</b><span>{a.countries}</span></div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="stat"><b>{places.length}</b><span>{a.countries}</span></div>
           <div className="stat"><b>GMP</b><span>{a.certified}</span></div>
         </div>
       </section>

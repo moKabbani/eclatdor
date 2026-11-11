@@ -63,7 +63,7 @@ export default async function ArticlePage({ params }: Props) {
 
   return (
     <article className="wrap" style={{ maxWidth: 860, paddingBlock: 'clamp(2rem, 5vw, 4rem) clamp(3.5rem, 8vw, 6rem)' }}>
-      <Link href={`/${lang}/blog`} className="muted inline-flex items-center gap-2 text-sm hover:underline">
+      <Link href={`/${lang}/blog`} className="muted -my-3 inline-flex items-center gap-2 py-3 text-sm hover:underline">
         <ArrowIcon style={{ transform: lang === 'ar' ? 'none' : 'scaleX(-1)' }} />
         {d.blog.title}
       </Link>

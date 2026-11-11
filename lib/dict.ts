@@ -47,7 +47,6 @@ export type Dict = {
     label: string
     title: string
     intro: string
-    points: string
     countries: string
     certified: string
     values: string
@@ -233,7 +232,6 @@ const dict: Record<Locale, Dict> = {
       title: 'A trusted name in clinical skin care',
       intro:
         "For over a decade, Éclat d'or has formulated and manufactured skin care trusted by pharmacies, clinics and retailers across the region.",
-      points: 'points of sale',
       countries: 'countries',
       certified: 'certified',
       values: 'What we stand for',
@@ -423,7 +421,6 @@ const dict: Record<Locale, Dict> = {
       title: 'اسم موثوق في العناية الطبية بالبشرة',
       intro:
         'منذ أكثر من عقد، تصنع إكلات دور منتجات عناية بالبشرة تثق بها الصيدليات والعيادات ومتاجر التجزئة في المنطقة.',
-      points: 'نقطة بيع',
       countries: 'دولة',
       certified: 'معتمدة',
       values: 'ما نؤمن به',
@@ -613,7 +610,6 @@ const dict: Record<Locale, Dict> = {
       title: 'Klinik cilt bakımında güvenilir bir isim',
       intro:
         "On yılı aşkın süredir Éclat d'or, bölgedeki eczaneler, klinikler ve perakendeciler tarafından güvenilen cilt bakım ürünleri üretiyor.",
-      points: 'satış noktası',
       countries: 'ülke',
       certified: 'sertifikalı',
       values: 'Değerlerimiz',
@@ -803,7 +799,6 @@ const dict: Record<Locale, Dict> = {
       title: 'Un nombre de confianza en cuidado clínico de la piel',
       intro:
         'Desde hace más de una década, Éclat d\'or formula y fabrica productos de cuidado de la piel en los que confían farmacias, clínicas y minoristas de la región.',
-      points: 'puntos de venta',
       countries: 'países',
       certified: 'certificada',
       values: 'Lo que defendemos',
@@ -993,7 +988,6 @@ const dict: Record<Locale, Dict> = {
       title: 'Надёжное имя в клиническом уходе за кожей',
       intro:
         'Более десяти лет Éclat d\'or разрабатывает и производит средства по уходу за кожей, которым доверяют аптеки, клиники и розничные сети в регионе.',
-      points: 'точек продаж',
       countries: 'стран',
       certified: 'сертифицировано',
       values: 'Наши принципы',

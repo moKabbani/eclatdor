@@ -50,14 +50,14 @@ export default async function ProductPage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <div className="wrap" style={{ paddingTop: '1.5rem' }}>
-        <Link href={`/${lang}/products`} className="muted inline-flex items-center gap-2 text-sm hover:underline">
+        <Link href={`/${lang}/products`} className="muted -my-3 inline-flex items-center gap-2 py-3 text-sm hover:underline">
           <ArrowIcon style={{ transform: lang === 'ar' ? 'none' : 'scaleX(-1)' }} />
           {d.common.backToProducts}
         </Link>
       </div>
 
       <section className="wrap grid gap-10 md:grid-cols-2 md:gap-16" style={{ paddingBlock: '2rem clamp(3rem, 7vw, 5.5rem)' }}>
-        <div className="md:sticky md:top-24 md:self-start">
+        <div className="min-w-0 md:sticky md:top-24 md:self-start">
           {product.images.length > 0 ? (
             <Gallery images={product.images} alt={name} />
           ) : (
