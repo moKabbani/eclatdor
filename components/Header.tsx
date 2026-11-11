@@ -40,42 +40,44 @@ export default function Header({ lang, nav, labels }: Props) {
     href === `/${lang}` ? pathname === href : pathname === href || pathname.startsWith(`${href}/`)
 
   return (
-    <header className="site-header">
-      <div className="wrap header-row">
-        <Link href={`/${lang}`} className="header-logo" aria-label="Éclat d'or">
-          <Logo height={40} eager />
-        </Link>
+    <>
+      <header className="site-header">
+        <div className="wrap header-row">
+          <Link href={`/${lang}`} className="header-logo" aria-label="Éclat d'or">
+            <Logo height={40} eager />
+          </Link>
 
-        <nav className="nav-desktop" aria-label={labels.mainNav}>
-          {nav.map((n) => (
-            <Link
-              key={n.href}
-              href={n.href}
-              className={`nav-link${n.pill ? ' nav-pill' : ''}`}
-              aria-current={isActive(n.href) ? 'page' : undefined}
+          <nav className="nav-desktop" aria-label={labels.mainNav}>
+            {nav.map((n) => (
+              <Link
+                key={n.href}
+                href={n.href}
+                className={`nav-link${n.pill ? ' nav-pill' : ''}`}
+                aria-current={isActive(n.href) ? 'page' : undefined}
+              >
+                {n.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="header-tools">
+            <div className="hidden min-[1100px]:block">
+              <LangSwitcher lang={lang} label={labels.language} />
+            </div>
+            <ThemeToggle label={labels.theme} />
+            <button
+              type="button"
+              className="icon-btn burger"
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              aria-label={open ? labels.closeMenu : labels.openMenu}
+              onClick={() => setOpenPath(open ? null : pathname)}
             >
-              {n.label}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="header-tools">
-          <div className="hidden min-[1100px]:block">
-            <LangSwitcher lang={lang} label={labels.language} />
+              {open ? <CloseIcon /> : <MenuIcon />}
+            </button>
           </div>
-          <ThemeToggle label={labels.theme} />
-          <button
-            type="button"
-            className="icon-btn burger"
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            aria-label={open ? labels.closeMenu : labels.openMenu}
-            onClick={() => setOpenPath(open ? null : pathname)}
-          >
-            {open ? <CloseIcon /> : <MenuIcon />}
-          </button>
         </div>
-      </div>
+      </header>
 
       {open && (
         <div id="mobile-menu" className="mobile-panel">
@@ -94,6 +96,6 @@ export default function Header({ lang, nav, labels }: Props) {
           <LangChips lang={lang} label={labels.language} />
         </div>
       )}
-    </header>
+    </>
   )
 }
